@@ -1,0 +1,1751 @@
+<template name="CompleteProfile">
+	<!-- Inscription Area Start-->
+  {{> minimenu}}
+
+	 {{#if currentUser}}
+     <div class="container">
+      
+       {{#if step1 }}
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Etes-vous individu ou Société?</h4>
+                  {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Are you physical or moral person?</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+        </div></div>
+        
+
+       <div class="form-group">
+           <div class="row">
+                 <div class="contact_full">
+                    <div class="col-md-6 left">
+                          <div class="left_contact">
+                            <form action="role">
+                                <div class="form-level">
+                                    <input class="input-block" id="Name" placeholder="Raison sociale ou Nom et Prénoms">
+                                    <span class="form-icon fa fa-user"></span>
+                                </div>
+                            </form>
+                          </div>
+        </div></div></div>
+
+       <div class="row">
+
+       
+          <div class="col-md-2">
+            <input id="type_individu" type="checkbox">
+             {{#if change_language}}
+              S'enregistrer en tant qu'individu
+              {{else}}
+              Sign up as physical person
+              {{/if}}
+          </div>
+
+           <div class="col-md-2">
+              <input id="type_societe" type="checkbox">
+              {{#if change_language}}
+                S'enregistrer en tant que Société
+              {{else}}
+                Sign up as a moral person (company)
+              {{/if}}
+           </div>
+         
+          <button type="button" id="next1" class="btn btn-success col-md-2" aria-label="Left Align"> {{#if change_language}} Suivant {{else}} Next {{/if}}
+               <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+          </button>
+      </div>
+        
+      </div>
+     
+      {{/if}}
+
+
+
+
+
+
+
+
+
+      {{#if step2 }}
+      <div class="row">
+            <div class="col-md-12">
+                <div class="feature_header text-center">
+                    {{#if change_language}}
+                      <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                      <h4 class="feature_sub">A propos de votre entreprise</h4>
+                    {{else}}
+                      <h3 class="feature_title"><b>Sign up</b></h3>
+                      <h4 class="feature_sub">About your company</h4>
+                    {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+        
+      <div class="form-group">
+        <div class="row">
+              <label for="fj" class="col-md-3 control-label">Forme Juridique</label>
+              <div class="col-md-3">
+                  <div class="form-level">
+                  <select class="form-control" id="fj">
+                    <option value=""></option>
+                    {{#if change_language}}
+                    <option value="SA">Société Anonyme</option>
+                    <option value="SARL">Société à responsabilité limitée</option>
+                    <option value="EI">Entreprise individuelle</option>
+                    <option value="ONG">ONG/Association</option>
+                    {{else}}
+                    <option value="SA">Public Limited company</option>
+                    <option value="SARL">Limited company</option>
+                    <option value="EI">Individual business owner</option>
+                    <option value="ONG">NGO/association</option>
+                    {{/if}}
+                  </select>
+                </div>
+              </div>
+        </div>
+
+      <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+                                <input class="form-control" id="adresse_siege" placeholder="Adresse du Siège de la société">
+                                <span class="form-icon fa fa-home"></span>
+                            </div>
+                         </form>
+                      </div>
+                  </div>
+              </div>
+      </div>
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+                      <input class="form-control" id="tel_siege" placeholder="Téléphone du siège">
+                      <span class="form-icon fa fa-mobile"></span>
+                    </div>
+                   </form>
+                </div>
+            </div>
+      </div>
+
+        <div class="row">
+         
+          <button type="button" id="next2_a" class="btn btn-success" aria-label="Left Align">
+             {{#if change_language}} Suivant {{else}} Next {{/if}}
+               <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </div>
+
+      {{/if}} 
+
+
+
+
+
+
+
+
+
+      {{#if step3 }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Etes-vous porteur de projet?</h4>
+                  {{else}}
+                   <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Do you have a project?</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+        </div></div>
+
+        <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+                                 <input class="form-control" id="cin" placeholder="Numéro CIN">
+                                 <span class="form-icon fa fa-key"></span>
+      </div></form></div></div></div></div>
+      
+      <div class="row">
+          <div class="form-group">
+              <label for="porteur" class="col-md-3 control-label">
+                {{#if change_language}}
+                  Etes-vous porteur de projet?
+                {{else}}
+                  Do you have a project ?
+                {{/if}}
+              </label>
+              <select id="porteur" class="col-md-3">
+                <option value=""></option>
+                 <option value="1">{{#if change_language}} Oui {{else}} Yes {{/if}}</option>
+                 <option value="0">{{#if change_language}}Non {{else}} No {{/if}}</option>
+              </select>
+          </div>
+      </div>
+
+    <div class="row">
+       
+        <button type="button" id="next2_b" class="btn btn-success" aria-label="Left Align">
+          {{#if change_language}} Suivant {{else}} Next {{/if}}
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+        </button>
+    </div>
+       {{/if}}
+     
+
+
+
+
+
+
+
+
+
+
+
+      <!-- si la personne est porteur de projet -->
+      {{#if step3_a }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                   {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Détails de votre projet?</h4>         
+                   {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Details about your project</h4> 
+                   {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+      <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+        
+                                   <input class="form-control" id="titre_projet" placeholder="Titre de votre projet">
+       </div></form></div></div>
+
+       <div class="col-md-6 right">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+                                   <textarea class="form-control" rows="5" id="phase_idee" >
+                                    {{#if change_language}}
+                                      Phase d'idée du projet
+                                    {{else}}
+                                      Idea conception step
+                                    {{/if}}
+                                   </textarea>
+      </div></form></div>
+      </div></div></div>
+
+      
+      <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+          <input class="form-control" id="prod_projet" placeholder="Principal produit proposé">
+        </div></form></div></div> 
+            <div class="col-md-6 right">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+          <textarea class="form-control" rows="5" id="phase_prototypage">
+            {{#if change_language}} 
+              Phase de prototypage du projet
+            {{else}}
+              Tell us more about ideas prototyping of your project
+            {{/if}}
+          </textarea>
+    </div></form></div>
+    </div></div></div>
+        
+
+     <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+          <textarea class="form-control" id="besoin_prod" rows="5">
+            {{#if change_language}} 
+                Avez-vous identifiez des besoins réels par rapport à vos produits
+            {{else}}
+               Have you already identified concrete supply for the products you plan to launch ?
+            {{/if}}
+          </textarea>
+      </div></form></div></div>
+      <div class="col-md-6 right">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+          <textarea class="form-control" rows="5" id="phase_demarrage">
+             {{#if change_language}} 
+                Phase de démarrage de votre projet
+              {{else}}
+                Tell us more about the expected launching phase of your project
+              {{/if}}
+          </textarea>
+    </div></form></div>
+    </div></div></div>       
+     
+    <div class="row">
+      <div class="contact_full">
+          <div class="form-group">
+              <label for="ressource_demarrage_projet" class="col-md-6 control-label">
+               {{#if change_language}} 
+                Avez-vous des ressources propres pour le démarrage de vos activités:
+               {{else}}
+               Have you already identified funds necessary to undertake your project?
+               {{/if}}
+              </label>
+              <div class="col-md-6">
+                <select class="form-control" id="ressource_demarrage_projet">
+                  <option id=""></option>
+                  <option value="1">{{#if change_language}}Oui{{else}}Yes{{/if}}</option>
+                  <option value="0">{{#if change_language}}Non{{else}}No{{/if}}</option>
+                </select>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+       <button type="button" id="next2_b_1" class="btn btn-success" aria-label="Left Align">
+        {{#if change_language}}Suivant {{else}} Next {{/if}}
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+        </button>
+      {{/if}}
+
+      
+
+
+
+      <!-- Si le porteur de projet n'a pas de ressources propres -->
+      {{#if step3_b}}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Comment comptez-vous financer votre projet?</h4>
+                  {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">How do you plan to fund your project?</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+        </div></div>
+
+       
+      <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+          <textarea class="form-control" id="mode_financement">
+            {{#if change_language}}
+              Comment comptez-vous financer votre projet
+            {{else}}
+              How do you plan to fund your project?
+            {{/if}}
+          </textarea>
+     </div></form></div></div></div></div>
+
+    <div class="row">
+      <div class="contact_full"> 
+           <div class="form-group">
+                  <label for="partie_prenante" class="col-md-3">
+                  {{#if change_language}}
+                    Etes-vous ouvert à d'autres parties prenantes (futurs actionnaires, investisseurs, mentors)
+                  {{else}}
+                    Are you open to other parties such as stakeholders, investors , coaching?
+                   {{/if}}
+                  </label>
+                  <select class="col-md-3" id="partie_prenante">
+                      <option value=""></option>
+                      <option value="1">{{#if change_language}} Oui {{else}} Yes {{/if}}</option>
+                      <option value="0">{{#if change_language}} Non {{else}} No {{/if}}</option>
+                  </select>
+            </div>
+    </div></div>
+
+       <button type="button" id="valider_step3_b" class="btn btn-primary" aria-label="Left Align">{{#if change_language}} Valider {{else}} Submit {{/if}}
+       </button>
+      {{/if}}
+
+
+
+
+
+      <!-- Si n'est pas porteur de projet step3-->
+      {{ #if step3_c }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Recherchez-vous un emploi?</h4>
+                  {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Are you looking for a job?</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+      
+    <div class="row">
+      <div class="contact_full"> 
+           <div class="form-group">
+              <label for="emploi" class="col-sm-6 control-label">
+              {{#if change_language}}
+                Etes-vous à la recherche d'opportunités d'emplois?
+              {{else}}
+                Are you looking for job opportunities?
+              {{/if}}
+              </label>
+              <select id="emploi" class="col-sm-6">
+                <option value=""></option>
+                 <option value="1"> {{#if change_language}}Oui{{else}}Yes{{/if}}</option>
+                 <option value="0"> {{#if change_language}}Non{{else}}No{{/if}}</option>
+              </select>
+          </div>
+    </div></div>
+      
+     
+       <button type="button" id="next2_b_2" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+       </button>
+       {{/if}}
+      
+      
+
+
+
+
+      <!-- si la personne est à la recherche d'emplois: -->
+       {{#if step3_d}}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Parlez-nous de votre parcours et compétences</h4>
+                  {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Tell us more about your professional records</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+        <h5> {{#if change_language}}Votre Parcours:{{else}} Your records: {{/if}}</h5>
+        <div class="form-group">
+        <label for="poste_emploi" class="col-md-4 control-label">
+           {{#if change_language}} 
+             Quelle poste voulez-vous occuper? 
+           {{else}}
+             What position are you looking for?
+           {{/if}}
+        </label>
+        <div class="col-md-8">
+          <input class="form-control" id="poste_emploi">
+        </div>
+      </div>
+      <!-- avadika tableau -->
+      <div class="form-group">
+        <label for="competence" class="col-md-4 control-label">
+           {{#if change_language}}
+             Quelles sont vos compétences:
+           {{else}}
+             Tell us more about your skills:
+           {{/if}}
+        </label>
+        <div class="col-md-8">
+          <input class="form-control" id="competence">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="expertise" class="col-md-4 control-label">
+          {{#if change_language}}
+            Avez-vous des expertises particulières:
+          {{else}}
+            Do you have a specific skill you want to mention?
+          {{/if}}
+        </label>
+        <div class="col-md-8">
+          <input class="form-control" id="expertise">
+        </div>
+      </div>
+     
+      <button type="button" id="next2_b_3" class="btn btn-success" aria-label="Left Align">
+        {{#if change_language}} Suivant {{else}} Next {{/if}}
+        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+       </button>
+       {{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+       {{ #if step3_e}}
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Parlez-nous de vos expériences professionelles</h4>
+                  {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Elaborate more on your professional experience</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+       <div class="form-group">
+        <label for="employeur" class="col-sm-4 control-label">
+          {{#if change_language}} Employeur {{else}} Employer{{/if}}
+        </label>
+        <div class="col-sm-8">
+          <input class="form-control" id="employeur">
+        </div>
+       </div>
+
+       <div class="form-group">
+        <label for="taches" class="col-sm-4 control-label">
+           {{#if change_language}} Décrivez vos tâches principales {{else}}
+           Please, describe your main duties {{/if}}
+        </label>
+        <div class="col-sm-8">
+          <input class="form-control" id="taches">
+        </div>
+       </div>
+
+       <div class="form-group">
+        <label for="diplome" class="col-sm-4 control-label">
+           {{#if change_language}} 
+             Diplome(s) académique(s) obtenu(s):
+           {{else}} academic diploma you have obtained {{/if}}
+        </label>
+        <div class="col-sm-8">
+          <input class="form-control" id="diplome">
+        </div>
+       </div>
+
+        <div class="form-group">
+        <label for="certificat" class="col-sm-4 control-label">
+           {{#if change_language}} 
+             Certificat(s) obtenu(s):
+           {{else}} certificate(s) you have obtained {{/if}}
+        </label>
+        <div class="col-sm-8">
+          <input class="form-control" id="certificat">
+        </div>
+       </div>
+
+       <div class="form-group">
+        <label for="mycv" class="col-sm-4 control-label">
+           {{#if change_language}}  Votre CV: {{else}} Your CV:{{/if}}
+        </label>
+        <div class="col-sm-8">
+          <input type="file" class="form-control" id="mycv">
+        </div>
+       </div>
+       <button type="button"  id="upload_cv" class="btn btn-primary" aria-label="Left Align">
+        Upload CV
+       </button>
+       <button type="button"  id="valider_step3_e" class="btn btn-primary" aria-label="Left Align">Valider
+       </button>
+       {{/if}}
+
+
+
+
+
+
+
+
+
+      
+     <!-- Si la personne n'est pas à la recherche d'emploi-->
+      {{ #if step3_f }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}} 
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Volontariat et stage en entreprises</h4>
+                  {{else}}
+                     <h3 class="feature_title"><b>Sign up</b></h3>
+                     <h4 class="feature_sub">Voluntary work and internship</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+      
+      
+      <div class="form-group">
+        <label for="volontariat_individu" class="col-sm-8">
+           {{#if change_language}} 
+            Etes-vous prêts à faire du volontariat au sein d'une entreprise, ONG:
+           {{else}}
+            Are you available for voluntary work opportunities in company, NGO ?
+           {{/if}}
+        </label>
+        <select class="col-sm-4" id="volontariat_individu">
+            <option value=""></option>
+            <option value="1"> {{#if change_language}} Oui {{else}} Yes {{/if}}</option>
+            <option value="0"> {{#if change_language}} Non {{else}} No {{/if}}</option>
+        </select>
+      </div>
+
+       <div class="form-group">
+        <label for="individu_stage" class="col-sm-8">
+          {{#if change_language}}
+            Etes-vous prêts à faire un stage au sein d'une entreprise ou une ONG:
+          {{else}}
+            Are you available for an internship in a company or NGO?
+          {{/if}}
+        </label>
+        <select class="col-sm-4" id="individu_stage">
+          <option value=""></option>
+            <option value="1">{{#if change_language}}Oui {{else}} Yes {{/if}}</option>
+            <option value="0">{{#if change_language}}Non {{else}} No {{/if}}</option>
+        </select>
+       </div>
+       
+       <button type="button" id="valider_step3_f" class="btn btn-primary" aria-label="Left Align">
+        {{#if change_language}} Valider {{else}} Submit {{/if}}         
+       </button>
+      {{/if}}
+      
+
+
+      
+     {{#if step4}}
+     <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}}
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">A propos de cette entreprise</h4>
+                  {{else}}
+                     <h3 class="feature_title"><b>Sign up</b></h3>
+                     <h4 class="feature_sub">About your company</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+    <div class="row">
+      <div class="form-group">
+        <label for="date_creation" class="col-md-3 control-label">
+           {{#if change_language}} Date de création: {{else}} Creation date {{/if}}</label>
+        <div class="col-md-3">
+          <input class="form-control" id="date_creation">
+          <span class="form-icon fa fa-calendar"></span>
+        </div>
+      </div>
+    </div>
+
+ 
+    <div class="row">
+      <div class="form-group">
+        <label for="num_cartestat" class="col-md-3 control-label">
+          {{#if change_language}} Numéro de la carte statistique: {{else}}
+          Statistical card ID {{/if}}
+        </label>
+        <div class="col-md-3">
+          <input class="form-control" id="num_cartestat">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="form-group">
+        <label for="num_nif" class="col-md-3 control-label">
+          {{#if change_language}}  Numéro NIF: {{else}}
+           Fiscal identification ID {{/if}}
+        </label>
+        <div class="col-md-3">
+          <input class="form-control" id="num_nif">
+        </div>
+      </div>
+    </div>
+
+     
+      <button type="button" id="next2_c" class="btn btn-success" aria-label="Left Align">
+        {{#if change_language}}  Suivant {{else}} Next {{/if}}
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+      {{/if}}
+
+
+
+
+
+
+     {{# if step5 }}
+     <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}} 
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Secteur d'activités et produit(s) et/ou services</h4>
+                  {{else}}
+                    <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">Activity sector, goods and/or services produced</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+      <div class="form-group">
+      <label for="MainActivity" class="col-md-2 control-label">
+        {{#if change_language}} Secteur d'activité principale
+        {{else}} Choose your main activity {{/if}}
+      </label>
+      <div class="col-md-4">
+      <select class="form-control" id="MainActivity">
+        <optgroup label="">
+        <option value=""></option>
+      </optgroup>
+        <optgroup label="AGRICULTURE,SYLVICULTURE,ELEVAGE,PECHE ET AQUACULTURE">
+          <option value="division1">
+            Culture et production animale, chasse et activités de services connexes
+          </option>
+          <option value="division2">Sylviculture et exploitation forestière</option>
+          <option value="division3">Pêche et aquaculture</option>
+        </optgroup>
+        <optgroup label="MINERAIS, ELECTRICITE, GAZ ET EAU">
+          <option value="division5">Extraction de houille et de lignite</option>
+          <option value="division6">Extraction de pétrole brut et du gaz naturel</option>
+          <option value="division7">Extraction de minerais métalliques</option>
+          <option value="division8">Autres industries extractives</option>
+          <option value="division9">Activités annexes de l’extraction</option>
+        </optgroup>
+        <optgroup label="ACTIVITES DE FABRICATION">
+          <option value="division10">Fabrication de produits alimentaires</option>
+          <option value="division11">Fabrication de boissons</option>
+          <option value="division12">Fabrication de produits à base de tabac</option>
+          <option value="division13">Fabrication de textiles</option>
+          <option value="division14">Fabrication d’articles d’habillement</option>
+          <option value="division15">Fabrication de cuir et d’articles de cuir</option>
+          <option value="division16">Production de bois et d’articles en bois et en liège (sauf fabrication de meubles), Fabrication d'articles en vannerie et sparterie</option>
+          <option value="division17">Fabrication de produits en papier et papier</option>
+          <option value="division18">Impression et reproduction de supports enregistrés</option>
+          <option value="division19">Cokéfaction et production de produits pétroliers raffinés</option>
+          <option value="division20">Fabrication de produits chimiques</option>
+          <option value="division21">Fabrication de préparations pharmaceutiques, de produits chimiques à usage médicinal et de produits d’herboristerie</option>
+          <option value="division22">Fabrication de produits en caoutchouc et en matières plastiques</option>
+          <option value="division23">Fabrication d'autres produits minéraux non métalliques</option>
+          <option value="division24">Fabrication de métaux de base</option>
+          <option value="division25">Fabrication d’ouvrages en métaux (sauf machines et matériel)</option>
+          <option value="division26">Fabrication de produits informatiques électroniques et optiques</option>
+          <option value="division27">Fabrication de matériel électrique</option>
+          <option value="division28">Fabrication de machines et de matériel, nca</option>
+          <option value="division29">Fabrication de véhicules automobiles remorques et semi‐remorques</option>
+          <option value="division30">Fabrication d’autres matériels de transport</option>
+          <option value="division31">Fabrication de meubles</option>
+          <option value="division32">Autres activités de fabrication</option>
+          <option value="division33">Réparation et installation de machines et de matériel </option>
+        </optgroup>
+
+        <optgroup label="Production, transport, distribution et vente d’électricité, de gaz, de vapeur et climatisation">
+          <option value="division35">Production, vente et distribution d’eau, réseau d’assainissement, gestion des déchets et activités de remise en état
+        </option>
+        </optgroup>
+        <optgroup label="Production, vente et distribution d’eau, réseau d’assainissement, gestion des déchets et activités de remise en état">
+          <option value="division36">Collecte et traitement des eaux, distribution d’eau</option>
+          <option value="division37">Réseau d’assainissement</option>
+          <option value="division38">Collecte des déchets, traitements et évacuation , récupération des matières </option>
+          <option value="division39">Activités de remise en état et autres services de traitement des déchets</option>
+        </optgroup>
+        <optgroup label="Construction">
+          <option value="division41">Construction de bâtiments</option> 
+          <option value="division42">Génie civile</option>
+          <option value="division43">Activités de construction spécialisées</option>
+        </optgroup>
+        <optgroup label="Commerce de gros et de détails, réparation de véhicules automobiles et de motocycles">
+          <option value="division45">Commerce de gros et de détail et réparation de véhicules automobiles et de motocycles et autres
+          </option>
+          <option value="division46">Commerce de gros à l'exception des automobiles et des motocycles</option>
+          <option value="division47">Commerce de détail à l'exception des automobiles et des motocycles</option>
+        </optgroup>
+        <optgroup label="Transport et entreposage">
+          <option value="division49">Transports terrestres et transport par conduite</option>
+          <option value="division50">Transport par eau</option>
+          <option value="division51">Transport aérien</option>
+          <option value="division52">Magasinage et activités annexes des transports</option>
+          <option value="division53">Activité de poste et de courrier</option>
+        </optgroup>
+        <optgroup label="Activités d’hébergement et de restauration">
+          <option value="division55">Hébergement</option>
+          <option value="division56">Activités de services de restauration et de consommation de boissons
+          </option>
+        </optgroup>
+        <optgroup label="Informations et communication">
+           <option value="Division58"> Activités d’édition</option> 
+           <option value="Division59"> Activités de production de films,vidéo, de programmes de télé, d’enregistrements sonores et d’édition musicale</option> 
+           <option value="Division60">Activités de programmation et de diffusion</option>
+           <option value="Division61">Télécommunications</option>
+           <option value="Division62">Programmes informatiques, conseils et activités connexes</option>
+           <option value="Division63">Activités de services d’information</option>
+        </optgroup>
+        <optgroup label="Activités financières et d’assurances">
+          <option value="division64">Activités des services financiers hors assurance et caisses de retraite
+          </option> 
+          <option value="division65">Activités d’assurances, de réassurance et de caisses de retraite, à l’exception de la sécurité sociale obligatoire
+          </option>
+          <option value="division66">Activités auxiliaires des services financiers et des assurances</option>
+        </optgroup>
+        <optgroup label="Activités immobilières">
+          <option value="division68">Activités immobilières</option>
+        </optgroup>
+        <optgroup label="Activités professionnelles, scientifiques, techniques">
+          <option value="division69">Activités juridiques et comptables</option>
+          <option value="division70">
+            Activités de siège principaux et activités de conseils en matière de gestion
+          </option>
+          <option value="division71">
+            Activités d’architecture et d’ingénierie, activités d’essais et d’analyses  techniques
+          </option>
+  <option value="division72">Recherche scientifique et  développement</option>
+  <option value="division73"> Publicité et études de marché</option>
+  <option value="division74"> Autres activités professionnelles, scientifiques et techniques</option>
+  <option value="division75"> Activités de services vétérinaires</option>
+        </optgroup>
+        <optgroup label="Activités de services administratifs et d’appui">
+          <option value="Division77">Activités de location</option>
+<option value="division78">Activités relatives à l’emploi</option> 
+<option value="division79">Activités des agences de voyage, voyagistes, services de réservation et activités connexes</option>  
+<option value="division80">Activités d’enquêtes et de sécurité</option>
+<option value="division81">Activités des services concernant les bâtiments, architecture paysagère</option>  
+<option value="division82">Activités d’appui administratif, de secrétariat, et autres activités d’appui aux entreprises</option>
+        </optgroup>
+        
+         <optgroup label="Education">
+          <option value="division85">Education</option>
+        </optgroup>
+         <optgroup label="Santé et action sociale">
+          <option value="division86"> Activités relatives à la santé</option>
+          <option value="division87">Activités de soins de santé dispensés en établissement</option>
+          <option value="division88">Activités d’action sociale sans hébergement</option>
+        </optgroup>
+        <optgroup label="Arts, spectacles et loisirs">
+          <option value="division90"> Activités créatives, arts et spectacle</option>
+          <option value="division91">  Bibliothèques archives musées et autres activités culturelles</option>
+          <option value="division92"> Activités de jeux de hasard et de pari </option>
+          <option value="Division93"> Activités sportives, de loisirs et récréatives</option> 
+        </optgroup>
+        <optgroup label="Autres activités de services">
+          <option value="division94"> Activités des organisations associatives</option>
+          <option value="division95">  Activités de réparation d’ordinateurs et d’articles personnels et ménagers</option> 
+          <option value="division96">   Autres activités de services personnels</option>
+        </optgroup>
+        <optgroup label="Activités des organisations et organismes extraterritoriaux">
+          <option value="division99">  Activités des organisations et organismes extraterritoriaux</option>
+        </optgroup>
+        
+      </select>
+      </div>
+      </div>
+
+  <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+                              <textarea class="form-control" rows="3" id="ACTP">
+                                {{#if change_language}} 
+                                   Décrivez votre activité principale
+                                {{else}}
+                                   Describe your main activity
+                                {{/if}}
+                              </textarea>
+  </div></form></div></div></div></div>
+
+    
+    <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+                              <textarea class="form-control" rows="3" id="ACTS">
+                                {{#if change_language}} 
+                                  Décrivez votre activité secondaire
+                                {{else}}
+                                  Describe your secondary activity
+                                {{/if}}
+                              </textarea>
+    </div></form></div></div></div></div>
+
+   <div class="row">
+              <div class="contact_full">
+                   <div class="col-md-6 left">
+                      <div class="left_contact">
+                         <form action="role">
+                            <div class="form-level">
+        <input class="form-control" id="ref_prod" placeholder="Votre produit de référence">
+
+    </div></form></div></div></div></div>
+
+   
+  <div class="row">
+    <div class="contact_full">
+      <div class="form-group">
+      <label for="photo_prod_ref" class="col-md-3 control-label">
+        {{#if change_language}} 
+          Photo de votre produit de référence
+        {{else}} Picture of your main product {{/if}}
+      </label>
+      <div class="col-md-3">
+        <input type="file" class="file" id="photo_prod_ref">
+      </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" id="upload-photo">Upload photo</button>
+
+  <div class="row">
+    <div class="contact_full">
+      <div class="form-group">
+          <div class="col-md-6">
+            <input  class="form-control" id="price_prod" placeholder="Prix de votre produit de référence">
+          </div>
+      </div>
+    </div>
+  </div><br>
+  
+
+      
+      <button type="button" id="next3" class="btn btn-success" aria-label="Left Align">
+        {{#if change_language}} Suivant {{else}} Next {{/if}}
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+    {{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{ #if step6}}
+    <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                  {{#if change_language}} 
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Dirigeants et Responsables de la société</h4>
+                  {{else}}
+                     <h3 class="feature_title"><b>Sign up</b></h3>
+                    <h4 class="feature_sub">CEO of the company</h4>
+                  {{/if}}
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+    <div class="form-group">
+        <label for="nom_resp" class="col-sm-4 control-label">Nom du 1er responsable de la société:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nom_resp">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone_resp" class="col-sm-4 control-label">Numéro du responsable:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="phone_resp">
+        </div>
+      </div>
+       
+       <div class="form-group">
+        <label for="fonction_resp" class="col-sm-4 control-label">Fonction du responsable:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="fonction_resp">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email_resp" class="col-sm-4 control-label">Email du responsable:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="email_resp">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="capital_social" class="col-sm-4 control-label">Capital social</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="capital_social">
+        </div>
+      </div>
+     
+      <button type="button" id="next4" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+      {{/if}}
+
+
+
+
+
+
+
+
+      {{#if step7 }}
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Renseignements commerciaux:</h4>
+                    <h5 class="feature_sub">Gamme de produits et/ou services</h5>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+       
+    
+        <!--{{#each mygammeproduits }} -->
+        
+       <div class="panel-group" id="accordion">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Principal gamme de produits & services 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+             <div ng-repeat="mygamme in corporation">
+               <!--{{#each x.produits}}-->
+                  <div class="row">
+                    <div class="col-sm-2">
+                          <input class="form-control"  id="nom_produit" placeholder="Nom du produit">
+                    </div>
+                    <div class="col-sm-2">
+                          <input  class="form-control" id="marque_produit" placeholder="Marque Commercial">  
+                    </div>
+                    <div class="col-sm-2">
+                          <input class="form-control" id="prix_produit" placeholder="Prix">    
+                    </div>
+                    <label class="col-sm-2 control-label">Photo du produit:</label>
+                    <div class="col-sm-4">
+                          <input type="file" class="file" id="photo_produit" placeholder="Photo">
+                    </div>
+                   
+                  </div>
+              <!--{{/each}}-->
+             </div>
+
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+      <!--{{/each}}-->
+    
+
+     <!--  <div class="row">
+           <div class="col-sm-3">
+              <label for="selectedGamme">Sélectionner la gamme</label>
+           </div>
+           <div class="col-sm-3">
+              <select class="form-control" id="selectedGamme">
+                <option value=""></option>
+                {{#each mygammeproduits}}
+                <option value="{{x.gamme}}">{{x.nom_gamme}}</option>
+                {{/each}}
+              </select>
+           </div>
+           <div class="col-sm-3">
+            
+           </div>    
+      </div>-->
+
+       <button  type="button" id="ajout_produit" class="btn-success" aria-label="Left Align">
+                  Ajouter produit <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+
+        <!--<button type="button" id="ajout_gamme" class="btn btn-success" aria-label="Left Align">Ajouter gamme
+                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>-->
+
+       <button  type="button" id="next5" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+   
+      {{/if}}
+
+
+
+
+
+     {{#if step8 }}
+     <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Principaux fournisseurs</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+     <!-- {{#each myfournisseur }} -->
+       
+       <div class="panel-group" id="accordion2">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne2">
+                     <!--{{x.nom_fournisseur}}--> Principaux fournisseurs de produits & services 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  
+                     <input class="form-control" id="nom_fournisseur" placeholder="Nom du fournisseur">
+                  
+                <!--{{#each x.produits}}-->
+                  <div class="row">                 
+                    <div class="col-sm-6">
+                          <input class="form-control" id="prct_achat_fournisseur" placeholder="% des achats vers ce fournisseur par rapport au total">
+                    </div>
+                    <div class="col-sm-6">
+                          <input class="form-control" id="produit_fourni" placeholder="Produit fourni">
+                    </div>
+                  </div>
+                <!--{{/each}}-->
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      <button type="button" id="ajout_produit_fourni" class="btn-success" aria-label="Left Align">
+                  Insérer fournisseur<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+
+       <button type="button" id="next6" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+      {{/if}}
+
+
+
+
+
+
+
+
+
+      {{#if step9 }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Principaux concurrents</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+      <!--{{#each myconcurrent }} -->
+       
+       <div class="panel-group" id="accordion2">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <!-- {{x.nom_concurrent}} --> Information sur le concurrent
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  
+                     <input class="form-control" id="nom_concurrent" placeholder="Nom du concurrent">
+                  
+                <!--{{#each x.produits}}-->
+                  <div class="row">                 
+                    <div class="col-sm-6">
+                          <input class="form-control" id="marketshare_concurrent" placeholder="Part de marché par rapport au concurrent">
+                    </div>
+                    <div class="col-sm-6">
+                          <input class="form-control" id="produit_fourni_concurrent" placeholder="Principal Produit fourni par ce concurrent">
+                    </div>
+                  </div>
+                <!--{{/each}}-->
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+      
+      <button type="button" id="ajout_produit_concurrent" class="btn btn-success" aria-label="Left Align">
+                  Insérer<span class="glyphicon glyphicon-plus" aria-hidden="true">
+                </span>
+      </button>
+     
+      <button type="button" id="next7" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+      {{/if}}
+
+
+
+
+
+      {{#if step10 }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Principaux clients</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+     <!-- {{#each myclient }} -->
+       
+       <div class="panel-group" id="accordion">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  <!-- {{ nom }} --> Principaux clients
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+               
+                  <div class="row">
+                    <div class="col-sm-4">
+                          <input class="form-control" id="nom_client" placeholder="Nom du client">
+                    </div>
+                     
+                    <div class="col-sm-8">
+                          <input class="form-control" id="prct_vente_client" placeholder="% des ventes vers ce client">
+                    </div>                         
+                  </div>
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+      
+
+        <button type="button" id="ajout_client" class="btn btn-success" aria-label="Left Align">Ajouter client
+                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+      <button type="button" id="next8" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+      {{/if}}
+
+
+
+
+
+
+
+     {{#if step11}}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Adresses de la société</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+      
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+     
+          <input class="form-control" id="lieu_exploitation" placeholder="Lieu d'exploitation">
+      
+  </div></form></div>
+              <div class="col-md-6 right">
+                  <form action="role">
+                      <div class="form-level">
+                          <input class="form-control" id="adresse_lieu_exploitation" placeholder="Adresse du lieu d'exploitation">
+                      </div>
+                  </form>
+              </div>
+
+</div></div>
+
+       <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+                            <input class="form-control" id="agence" placeholder="Agence,Filiale ou Point de Vente">
+      </div></form></div>
+              <div class="col-md-6 right">
+                  <form action="role">
+                      <div class="form-level">
+                          <input class="form-control" id="adresse_agence" placeholder="Adresse Agence,Filiale ou Point de Vente">
+                      </div>
+                  </form>
+              </div>
+    </div></div>
+
+     <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+                          <input class="form-control" id="bureau" placeholder="Bureau ou représentation">
+        </div></form></div>
+        <div class="col-md-6 right">
+                  <form action="role">
+                      <div class="form-level">
+                          <input class="form-control" id="adresse_bureau" placeholder="Adresse bureau ou représentation">
+                      </div>
+                  </form>
+              </div>
+      </div></div>
+       
+     
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-3 left">
+                  <form action="role">
+                    <div class="form-level">
+                        <input class="form-control" id="nom_resp_cial" placeholder="Nom du responsable Commercial">
+                    </div></form></div>
+                 <div class="col-md-3 left">
+                  <form action="role">
+                    <div class="form-level">
+                        <input class="form-control" id="phone_resp_cial" placeholder="Numéro du responsable Commercial">
+                    </div></form></div>
+                <div class="col-md-3 left">
+                  <form action="role">
+                    <div class="form-level">  
+                       <input class="form-control" id="fonction_resp_cial" placeholder="Fonction du responsable Commercial">
+                     </div></form></div>
+                <div class="col-md-3 left">
+                  <form action="role">
+                    <div class="form-level"> 
+                        <input class="form-control" id="email_resp_cial" placeholder="Email du responsable Commercial">
+                   </div></form></div>
+
+    </div></div>
+
+
+     <div class="row">
+        <div class="form-group">
+          <label for="lien_website" class="col-sm-3 control-label">Lien Site Web:</label>
+          <div class="col-md-3">
+            <input class="form-control" id="lien_website">
+          </div>
+        </div>
+     </div>
+
+      <!--<button type="button" id="previous9" class="btn btn-success" aria-label="Left Align"> 
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Précédent
+      </button>-->
+       <button type="button" id="next9" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+      {{/if}}
+
+
+
+
+
+
+
+      {{#if step12}}
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Ressources Humaines: Dirigeants</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+                        <input class="form-control" id="dir_exec" placeholder="Direction Exécutive">
+        </div></form></div>
+                <div class="col-md-6 right">
+                  <form action="role">
+                    <div class="form-level">
+                        <input class="form-control" id="phone_dir_exec" placeholder="Numéro de téléphone">
+        </div></form></div>
+      </div></div>
+     
+
+       <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+                            <input class="form-control" id="dir_prod" placeholder="Direction Production">
+        </div></form></div>
+                <div class="col-md-6 right">
+                  <form action="role">
+                    <div class="form-level">
+       
+                       <input class="form-control" id="phone_dir_prod" placeholder="Numéro de téléphone">
+         </div></form></div>
+      </div></div>
+
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+      
+                          <input class="form-control" id="dir_cial" placeholder="Direction Commerciale">
+            </div></form></div>
+                <div class="col-md-6 right">
+                  <form action="role">
+                    <div class="form-level">
+         
+                           <input class="form-control" id="phone_dir_cial" placeholder="Numéro de téléphone">
+       </div></form></div>
+      </div></div>
+
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+     
+                           <input class="form-control" id="drh" placeholder="D.R.H">
+            </div></form></div>
+                <div class="col-md-6 right">
+                  <form action="role">
+                    <div class="form-level">
+        
+                           <input class="form-control" id="phone_drh" placeholder="Numéro de téléphone:">
+      </div></form></div>
+      </div></div>
+
+      <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+     
+                        <input class="form-control" id="daf" placeholder="Direction Financière">
+            </div></form></div>
+                <div class="col-md-6 right">
+                  <form action="role">
+                    <div class="form-level">
+     
+          <input class="form-control" id="phone_daf" placeholder="Numéro de téléphone">
+        
+       </div></form></div>
+      </div></div>
+
+       <div class="row">
+            <div class="contact_full">
+                <div class="col-md-6 left">
+                  <form action="role">
+                    <div class="form-level">
+     
+                        <input class="form-control" id="di" placeholder="Direction Informatique">      
+            </div></form></div>
+                <div class="col-md-6 right">
+                  <form action="role">
+                    <div class="form-level">
+     
+                         <input class="form-control" id="phone_di" placeholder="Numéro de téléphone">
+        
+        </div></form></div>
+      </div></div>
+
+      <!--<button type="button" id="previous10" class="btn btn-success" aria-label="Left Align"> 
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Précédent
+      </button>-->
+       <button type="button" id="next10" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+     {{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     {{#if step13 }}
+
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Effectifs</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+       <h5>Effectifs permanents:</h5>
+
+       <div class="form-group">
+        <label for="nb_dirigeant" class="col-sm-4 control-label">Dirigeants:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nb_dirigeant">
+        </div>
+      </div> 
+
+      <div class="form-group">
+        <label for="nb_cadre" class="col-sm-4 control-label">Cadres:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nb_cadre">
+        </div>
+      </div> 
+
+      <div class="form-group">
+        <label for="nb_employee" class="col-sm-4 control-label">Employés:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nb_employee">
+        </div>
+      </div> 
+
+      <div class="form-group">
+        <label for="nb_ouvrier" class="col-sm-4 control-label">Ouvriers:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nb_ouvrier">
+        </div>
+      </div> 
+
+        <h5>Effectifs temporaires / saisonniers:</h5>
+
+        <div class="form-group">
+        <label for="nb_consultant" class="col-sm-4 control-label">Consultants:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nb_consultant">
+        </div>
+      </div> 
+
+      <div class="form-group">
+        <label for="nb_ouvrier_tmp" class="col-sm-4 control-label">Ouvriers et/ou Employés:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nb_ouvrier_tmp">
+        </div>
+      </div>
+      <!--<button type="button" id="previous11" class="btn btn-success" aria-label="Left Align"> 
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Précédent
+      </button>-->
+       <button type="button" id="next11" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+    {{/if}}
+      
+
+
+
+
+      {{#if step14 }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Renseignements financiers</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+       <h4>Renseignements Financiers:</h4>
+       <!-- Asiana  début exercice -->
+       <div class="form-group">
+        <label for="annee" class="col-sm-4 control-label">Choisir une année financière</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="annee">
+        </div>   
+      </div>
+
+       <div class="form-group">
+        <label for="CA" class="col-sm-4 control-label">Chiffre d'affaires:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="CA">
+        </div>   
+      </div>
+      
+      <div class="form-group">
+        <label for="profit" class="col-sm-4 control-label">Profit brut:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="profit">
+        </div>   
+      </div>
+      <div class="form-group">
+        <label for="benefice" class="col-sm-4 control-label">Bénéfice d'exploitation:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="benefice">
+        </div>   
+      </div>
+      <div class="form-group">
+        <label for="revenu_net" class="col-sm-4 control-label">Revenu net:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="revenu_net">
+        </div>   
+      </div>
+      <!-- <div class="form-group">
+        <label for="capitaux_propre" class="col-sm-4 control-label">Capitaux propres (moyenne,valeur comptable):</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="capitaux_propre">
+        </div>   
+      </div>
+      <div class="form-group">
+        <label for="actifs" class="col-sm-4 control-label">Moyenne des Actifs (valeur comptable):</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="actifs">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="prix_action" class="col-sm-4 control-label">Prix des actions</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="prix_action">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="revenu_action" class="col-sm-4 control-label">Revenu par action</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="revenu_action">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="dette_totale" class="col-sm-4 control-label">Dette totale</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="dette_totale">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="interet_debiteur" class="col-sm-4 control-label">Intérêts débiteurs</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="interet_debiteur">
+        </div>   
+      </div>
+
+
+      <div class="form-group">
+        <label for="cout_bs_vendu" class="col-sm-4 control-label">Couts des biens et services vendus</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="cout_bs_vendu">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="stock" class="col-sm-4 control-label">Moyenne des stocks</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="stock">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="rotation_stock" class="col-sm-4 control-label">Rotation des stocks</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="rotation_stock">
+        </div>   
+      </div>
+
+      <div class="form-group">
+        <label for="cmpte_debiteur" class="col-sm-4 control-label">Moyenne des comptes clients</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="cmpte_debiteur">
+        </div>   
+      </div>-->
+
+
+
+      
+      <!--<button type="button" id="previous12" class="btn btn-success" aria-label="Left Align"> 
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Précédent
+      </button>-->
+          <button type="button" id="final_button" class="btn btn-success enter-info">Valider
+          </button>
+ 
+      {{/if}}
+   </div> <!--end of the container -->
+    {{else}}
+    <br><br><br><br>
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b><a href="/login">Connectez-vous d'abord</a></b></h3>
+                    <div class="divider"></div>
+                </div>
+   </div></div></div>
+
+    {{/if}}
+
+</template>

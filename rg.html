@@ -1,0 +1,646 @@
+<template name="rg">
+{{#each mydata_edit}}
+ <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h5 class="feature_sub">Information de base</h5>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+ <div class="form-group">
+         
+                            <div class="row">
+                                    <div class="col-sm-5">
+                                        <label for="Name">Nom ou raison sociale:</label>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input  id="Name" contenteditable="true" value="{{Name}}">
+                                        <!--</h4>-->
+                                    </div>
+                            </div>
+<br>
+       <div class="row">
+           <div class="col-sm-4">
+            <input id="type_individu"  type="checkbox">Individu
+          </div>
+          <div class="col-sm-5">
+            <input id="type_societe" class="col-sm-5" type="checkbox">Société 
+            </div>  
+       </div>
+<br>
+    <div class="row">
+              <label for="fj" class="col-sm-4 control-label">Forme Juridique</label>
+              <div class="col-sm-5">
+                  <div class="form-level">
+                  <select class="form-control" id="fj">
+                    <option value="{{FJ}}">{{FJ}}</option>
+                    <!--<option value="SA">Société Anonyme</option>
+                    <option value="SARL">Société à responsabilité limitée</option>
+                    <option value="EI">Entreprise individuelle</option>
+                    <option value="ONG">ONG/Association</option>-->
+                  </select>
+                </div>
+              </div>
+    </div>
+<br>
+      <div class="row">
+                            <div class="col-sm-4">
+                                <label for="adresse_siege">Adresse Siège:</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <input contenteditable="true" id="adresse_siege" value="{{adresse_siege}}">
+                                <span class="form-icon fa fa-home"></span>
+                            </div>
+                         
+      </div>
+<br>
+      <div class="row">
+                    <div class="col-sm-4">
+                                <label for="tel_siege">Téléphone Siège:</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input contenteditable="true" id="tel_siege" value="{{tel_siege}}">
+                        
+                      
+                      <span class="form-icon fa fa-mobile"></span>
+                    </div>
+                   
+      </div>
+
+
+  {{#if individu_porteur_projet }}
+        <div class="row">
+             <div class="col-sm-2">
+                <label for="cin">CIN N°:</label>
+             </div>
+             <div class="col-sm-7">
+                                 <input contenteditable="true" id="cin" value="{{num_cin}}">
+                                 <span class="form-icon fa fa-key"></span>
+      </div></div><br>
+      
+      <div class="row">
+          <div class="form-group">
+              <label for="porteur" class="col-sm-5 control-label">Etes-vous porteur de projet?</label>
+              <select id="porteur" class="col-sm-4">
+                <option value="">{{porteur}}</option>
+                 <!--<option value="1">Oui</option>
+                 <option value="0">Non</option>-->
+              </select>
+          </div>
+      </div><br>
+
+    <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Détails de votre projet?</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+<br>
+      <div class="row">
+                    <div class="col-sm-5">     
+                                   <label for="titre_projet">Titre du projet</label>
+                    </div>
+                    <div class="col-sm-4">     
+                                   <input contenteditable="true" id="titre_projet" value="{{titre_projet}}">
+                    </div>
+      </div>
+<br>
+      <div class="row">
+                    <div class="col-sm-5">     
+                                   <label for="phase_idee">Phase d'idée du projet</label>
+                    </div>
+                    <div class="col-sm-4">
+                                   <input contenteditable="true" id="phase_idee" value="{{phase_idee}}"> 
+                    </div>
+      </div>
+<br>  
+<div class="row">
+        <div class="col-sm-5">
+          <label for="prod_projet">Principal produit proposé</label>
+        </div>  
+        <div class="col-sm-4">
+          <input contenteditable="true" id="prod_projet" value="{{prod_projet}}">
+        </div> 
+</div>
+
+<br>
+
+<div class="row">
+          <div class="col-sm-4">
+            <label for="phase_prototypage">Phase de prototypage:</label>
+          </div> 
+          <div class="col-sm-5">             
+            <input contenteditable="true" id="phase_prototypage" value="{{phase_prototypage}}">
+            
+          </div>
+</div>
+<br>
+
+<div class="row">
+          <div class="col-sm-5">
+            <label for="besoin_prod">Besoins réels par rapport à vos produits</label>
+          </div> 
+          <div class="col-sm-4">
+            <input contenteditable="true" id="besoin_prod" value="{{besoin_prod}}">
+            
+          </div>
+</div>
+<br>
+<div class="row">
+            <div class="col-sm-4">
+                <label for="besoin_prod">Phase de démarrage:</label>
+            </div> 
+            <div class="col-sm-5">
+                <input contenteditable="true" id="phase_demarrage" value="{{phase_demarrage}}">
+               
+            </div>
+</div>
+<br>
+     
+<div class="row">
+          <div class="col-sm-4">
+              <label for="ressource_demarrage_projet">Ressources propres pour le démarrage de vos activités:
+              </label>
+          </div>
+          <div class="col-sm-5">
+                <select class="form-control" id="ressource_demarrage_projet">
+                  <option id="{{ressource_demarrage_projet}}">{{ressource_demarrage_projet}}</option>
+                  <!--<option value="1">Oui</option>
+                  <option value="0">Non</option>-->
+                </select>
+          </div>
+</div>
+      
+{{/if}}
+<br>
+{{#if no_ressource}}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Comment comptez-vous financer votre projet?</h4>
+                    <div class="divider"></div>
+                </div>
+        </div></div>
+<br>
+       
+      <div class="row">
+              <div class="col-sm-4">
+                <label for="mode_financement">Mode de financement</label>
+              </div>
+              <div class="col-sm-5">
+                   <input contenteditable="true" id="mode_financement" value="{{mode_financement}}">
+                   
+              </div>
+      </div>
+<br>
+<div class="row">
+     
+           <div class="col-sm-6">
+                  <label for="partie_prenante" class="col-md-3">Ouvert à d'autres parties prenantes (futurs actionnaires, investisseurs, mentors)?
+                  </label>
+            </div>
+            <div class="col-sm-3">
+                  <select class="col-md-3" id="partie_prenante">
+                    <option value="{{partie_prenante}}">{{partie_prenante}}</option>
+                      <!--<option value="1">Oui</option>
+                      <option value="0">Non</option>-->
+                  </select>
+            </div>
+</div>
+       
+{{/if}}
+
+{{ #if no_projet }}
+<div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_title"><b>Emplois</b></h4>
+                    <div class="divider"></div>
+                </div>
+        </div>
+</div>
+      
+<div class="row">
+          <div class="col-sm-7">
+              <label for="emploi" class="control-label">A la recherche d'opportunités d'emplois?:
+              </label>
+          </div>
+          <div class="col-sm-2">
+              <select id="emploi" class="form-control">
+                <option value="{{emploi}}">{{emploi}}</option>
+                 <!--<option value="1">Oui</option>
+                 <option value="0">Non</option>-->
+              </select>
+          </div>
+</div>
+    
+{{/if}}
+<br>
+{{#if recherche_emploi }}
+<div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Parlez-nous de votre parcours et compétences</h4>
+                    <div class="divider"></div>
+                </div>
+      </div>
+</div>
+<br>
+<div class="row">     
+      <div class="col-sm-6">
+        <label for="poste_emploi" class="col-md-4 control-label">Quelle poste voulez-vous occuper?</label>
+      </div>
+      <div class="col-sm-3">
+          <input contenteditable="true" id="poste_emploi" value="{{poste_emploi}}">
+      </div>
+</div><br>
+      
+      <!-- avadika tableau -->
+<div class="row">
+        <div class="col-sm-5">
+          <label for="competence" class="col-md-4 control-label">Quelles sont vos compétences:</label>
+        </div>
+        <div class="col-sm-4">
+          <input contenteditable="true" id="competence" value="{{competence}}">
+        </div>
+</div><br>
+<div class="row">
+        <div class="col-sm-5">
+         <label for="expertise" class="col-md-4 control-label">Avez-vous des Expertises particulières:</label>
+        </div>
+        <div class="col-sm-4">
+          <input contenteditable="true" id="expertise" value="{{expertise}}">
+        </div>
+</div><br>
+     
+<br>
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Parlez-nous de vos expériences professionelles</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+      <br>
+       <div class="row">
+          <div class="col-sm-4">
+             <label for="employeur" class="control-label">Employeur</label>
+          </div>
+          <div class="col-sm-5">
+             <input contenteditable="true" id="employeur" value="{{employeur}}">
+          </div>
+       </div>
+<br>
+       <div class="row">
+         <div class="col-sm-4">
+           <label for="taches" class="control-label">Décrivez vos tâches principales</label>
+         </div>
+         <div class="col-sm-5">
+           <input contenteditable="true" id="taches" value="{{taches}}">
+         </div>
+       </div>
+<br>
+       <div class="row">
+          <div class="col-sm-4">
+            <label for="diplome" class="control-label">Diplome(s) académique(s) obtenu(s):</label>
+          </div>
+        <div class="col-sm-5">
+          <input contenteditable="true" id="diplome" value="{{diplome}}">
+        </div>
+       </div>
+<br>
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="certificat" class="control-label">Certficat(s) obtenu(s):</label>
+          </div>
+          <div class="col-sm-5">
+            <input contenteditable="true" id="certificat" value="{{certificat}}">
+          </div>
+       </div>
+<br>
+      <div class="row">
+          <div class="col-sm-4">
+            <label for="mycv" class="col-sm-4 control-label">Votre CV:</label>
+          </div>
+        <div class="col-sm-5">
+          <input type="file" class="form-control" id="mycv">
+        </div>
+        <button type="button"  id="upload_cv" class="btn btn-primary" aria-label="Left Align">Upload CV
+       </button>
+      </div>
+<br>    
+       
+{{/if}}
+       <!-- Si la personne n'est pas à la recherche d'emploi-->
+{{ #if recherche_emploi }}
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Volontariat et stage en entreprises</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+  <br>    
+      
+      <div class="row">
+        <div class="col-sm-7">
+          <label for="volontariat_individu" > Etes-vous prêts à faire du volontariat au sein d'une entreprise, ONG:</label>
+        </div>
+        <div class="col-sm-2">
+          <select id="volontariat_individu" class="form-control">
+            <option value="">{{volontariat_individu}}</option>
+            <!--<option value="1">Oui</option>
+            <option value="0">Non</option>-->
+          </select>
+        </div>
+    </div>
+<br>
+<div class="row">
+      <div class="col-sm-7">
+        <label for="individu_stage" >Etes-vous prêts à faire un stage au sein d'une entreprise ou une ONG:7
+        </label>
+      </div>
+      <div class="col-sm-2">
+        <select id="individu_stage" class="form-control">
+          <option value=""></option>
+            <option value="1">Oui</option>
+            <option value="0">Non</option>
+        </select>
+      </div>
+</div>
+
+{{/if}}
+<br>
+{{#if societe }}
+     <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">A propos de cette entreprise</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="date_creation" class="control-label">Date de création:</label>
+      </div>
+        <div class="col-sm-5">
+          <input contenteditable="true" id="date_creation" value="{{date_creation}}">
+          <span class="form-icon fa fa-calendar"></span>
+        </div>
+    </div>
+<br> 
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="num_cartestat" class="control-label">Numéro de la carte statistique:</label>
+      </div>
+      <div class="col-sm-5">
+          <input contenteditable="true" id="num_cartestat" value="{{num_cartestat}}">
+      </div>
+    </div>
+    
+<br>
+
+<div class="row">
+      <div class="col-sm-4">
+        <label for="num_nif" class="control-label">Numéro NIF:</label>
+      </div>
+      <div class="col-sm-5">
+          <input contenteditable="true" id="num_nif" value="{{num_nif}}">
+      </div> 
+</div>
+
+<br>
+     <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Secteur d'activités et produit(s) et/ou services</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+<div class="row">
+   
+    <div class="col-sm-9">
+      <select class="form-control" id="MainActivity">
+        <optgroup label="">
+        <option value=""></option>
+      </optgroup>
+        <optgroup label="AGRICULTURE,SYLVICULTURE,ELEVAGE,PECHE ET AQUACULTURE">
+          <option value="division1">Culture et production animale, chasse et activités de services connexes</option>
+          <option value="division2">Sylviculture et exploitation forestière</option>
+          <option value="division3">Pêche et aquaculture</option>
+        </optgroup>
+        <optgroup label="MINERAIS, ELECTRICITE, GAZ ET EAU">
+          <option value="division5">Extraction de houille et de lignite</option>
+          <option value="division6">Extraction de pétrole brut et du gaz naturel</option>
+          <option value="division7">Extraction de minerais métalliques</option>
+          <option value="division8">Autres industries extractives</option>
+          <option value="division9">Activités annexes de l’extraction</option>
+        </optgroup>
+        <optgroup label="ACTIVITES DE FABRICATION">
+          <option value="division10">Fabrication de produits alimentaires</option>
+          <option value="division11">Fabrication de boissons</option>
+          <option value="division12">Fabrication de produits à base de tabac</option>
+          <option value="division13">Fabrication de textiles</option>
+          <option value="division14">Fabrication d’articles d’habillement</option>
+          <option value="division15">Fabrication de cuir et d’articles de cuir</option>
+          <option value="division16">Production de bois et d’articles en bois et en liège (sauf fabrication de meubles), Fabrication d'articles en vannerie et sparterie</option>
+          <option value="division17">Fabrication de produits en papier et papier</option>
+          <option value="division18">Impression et reproduction de supports enregistrés</option>
+          <option value="division19">Cokéfaction et production de produits pétroliers raffinés</option>
+          <option value="division20">Fabrication de produits chimiques</option>
+          <option value="division21">Fabrication de préparations pharmaceutiques, de produits chimiques à usage médicinal et de produits d’herboristerie</option>
+          <option value="division22">Fabrication de produits en caoutchouc et en matières plastiques</option>
+          <option value="division23">Fabrication d'autres produits minéraux non métalliques</option>
+          <option value="division24">Fabrication de métaux de base</option>
+          <option value="division25">Fabrication d’ouvrages en métaux (sauf machines et matériel)</option>
+          <option value="division26">Fabrication de produits informatiques électroniques et optiques</option>
+          <option value="division27">Fabrication de matériel électrique</option>
+          <option value="division28">Fabrication de machines et de matériel, nca</option>
+          <option value="division29">Fabrication de véhicules automobiles remorques et semi‐remorques</option>
+          <option value="division30">Fabrication d’autres matériels de transport</option>
+          <option value="division31">Fabrication de meubles</option>
+          <option value="division32">Autres activités de fabrication</option>
+          <option value="division33">Réparation et installation de machines et de matériel </option>
+        </optgroup>
+
+        <optgroup label="Production, transport, distribution et vente d’électricité, de gaz, de vapeur et climatisation">
+          <option value="division35">Production, vente et distribution d’eau, réseau d’assainissement, gestion des déchets et activités de remise en état
+        </option>
+        </optgroup>
+        <optgroup label="Production, vente et distribution d’eau, réseau d’assainissement, gestion des déchets et activités de remise en état">
+          <option value="division36">Collecte et traitement des eaux, distribution d’eau</option>
+          <option value="division37">Réseau d’assainissement</option>
+          <option value="division38">Collecte des déchets, traitements et évacuation , récupération des matières </option>
+          <option value="division39">Activités de remise en état et autres services de traitement des déchets</option>
+        </optgroup>
+        <optgroup label="Construction">
+          <option value="division41">Construction de bâtiments</option> 
+          <option value="division42">Génie civile</option>
+          <option value="division43">Activités de construction spécialisées</option>
+        </optgroup>
+        <optgroup label="Commerce de gros et de détails, réparation de véhicules automobiles et de motocycles">
+          <option value="division45">Commerce de gros et de détail et réparation de véhicules automobiles et de motocycles et autres
+          </option>
+          <option value="division46">Commerce de gros à l'exception des automobiles et des motocycles</option>
+          <option value="division47">Commerce de détail à l'exception des automobiles et des motocycles</option>
+        </optgroup>
+        <optgroup label="Transport et entreposage">
+          <option value="division49">Transports terrestres et transport par conduite</option>
+          <option value="division50">Transport par eau</option>
+          <option value="division51">Transport aérien</option>
+          <option value="division52">Magasinage et activités annexes des transports</option>
+          <option value="division53">Activité de poste et de courrier</option>
+        </optgroup>
+        <optgroup label="Activités d’hébergement et de restauration">
+          <option value="division55">Hébergement</option>
+          <option value="division56">Activités de services de restauration et de consommation de boissons</option>
+        </optgroup>
+        <optgroup label="Informations et communication">
+           <option value="Division58"> Activités d’édition</option> 
+           <option value="Division59"> Activités de production de films,vidéo, de programmes de télé, d’enregistrements sonores et d’édition musicale</option> 
+           <option value="Division60">Activités de programmation et de diffusion</option>
+           <option value="Division61">Télécommunications</option>
+           <option value="Division62">Programmes informatiques, conseils et activités connexes</option>
+           <option value="Division63">Activités de services d’information</option>
+        </optgroup>
+        <optgroup label="Activités financières et d’assurances">
+          <option value="division64">Activités des services financiers hors assurance et caisses de retraite</option> 
+          <option value="division65">Activités d’assurances, de réassurance et de caisses de retraite, à l’exception de la sécurité sociale obligatoire</option>
+          <option value="division66">Activités auxiliaires des services financiers et des assurances</option>
+        </optgroup>
+        <optgroup label="Activités immobilières">
+          <option value="division68">Activités immobilières</option>
+        </optgroup>
+        <optgroup label="Activités professionnelles, scientifiques, techniques">
+          <option value="division69">Activités juridiques et comptables</option>
+  <option value="division70">Activités de siège principaux et activités de conseils en matière de gestion</option>
+  <option value="division71">Activités d’architecture et d’ingénierie, activités d’essais et d’analyses  techniques</option>
+  <option value="division72">Recherche scientifique et  développement</option>
+  <option value="division73"> Publicité et études de marché</option>
+  <option value="division74"> Autres activités professionnelles, scientifiques et techniques</option>
+  <option value="division75"> Activités de services vétérinaires</option>
+        </optgroup>
+        <optgroup label="Activités de services administratifs et d’appui">
+          <option value="Division77">Activités de location</option>
+<option value="division78">Activités relatives à l’emploi</option> 
+<option value="division79">Activités des agences de voyage, voyagistes, services de réservation et activités connexes</option>  
+<option value="division80">Activités d’enquêtes et de sécurité</option>
+<option value="division81">Activités des services concernant les bâtiments, architecture paysagère</option>  
+<option value="division82">Activités d’appui administratif, de secrétariat, et autres activités d’appui aux entreprises</option>
+        </optgroup>
+        
+         <optgroup label="Education">
+          <option value="division85">Education</option>
+        </optgroup>
+         <optgroup label="Santé et action sociale">
+          <option value="division86"> Activités relatives à la santé</option>
+          <option value="division87">Activités de soins de santé dispensés en établissement</option>
+          <option value="division88">Activités d’action sociale sans hébergement</option>
+        </optgroup>
+        <optgroup label="Arts, spectacles et loisirs">
+          <option value="division90"> Activités créatives, arts et spectacle</option>
+          <option value="division91">  Bibliothèques archives musées et autres activités culturelles</option>
+          <option value="division92"> Activités de jeux de hasard et de pari </option>
+          <option value="Division93"> Activités sportives, de loisirs et récréatives</option> 
+        </optgroup>
+        <optgroup label="Autres activités de services">
+          <option value="division94"> Activités des organisations associatives</option>
+          <option value="division95">  Activités de réparation d’ordinateurs et d’articles personnels et ménagers</option> 
+          <option value="division96">   Autres activités de services personnels</option>
+        </optgroup>
+        <optgroup label="Activités des organisations et organismes extraterritoriaux">
+          <option value="division99">  Activités des organisations et organismes extraterritoriaux</option>
+        </optgroup>
+        
+      </select>
+      </div>
+</div>
+
+<br>
+
+<div class="row">
+              <div class="col-sm-5">
+                <label for="">Description activité principale:</label>
+              </div>
+                   
+                            <div class="col-sm-7">
+                              <textarea contenteditable="true" rows="3" id="ACTP">{{ACTP}}</textarea>
+                            </div>
+</div>
+
+ <br>   
+    <div class="row">
+              <div class="col-sm-5">
+                <label for="">Description activité secondaire:</label>
+              </div>
+                   
+                            <div class="col-sm-7">
+                              <textarea contenteditable="true" rows="3" id="ACTP">{{ACTS}}</textarea>
+                            </div>
+</div>
+
+<div class="row"> 
+      <div class="col-sm-4">
+         <label for="ref_prod">Produit de référence:</label>
+      </div>        
+      <div class="col-sm-5">
+        <input contenteditable="true" id="ref_prod" value="{{ref_prod}}">
+      </div>
+</div>
+
+ <br>
+
+<div class="row">
+      <div class="col-sm-6">
+         <label for="photo_prod_ref" class="control-label">Photo du produit de référence</label>
+      </div>
+      <div class="col-sm-6">
+        <img id="photo_prod_ref" width="25%" src="{{photo_prod_ref}}"/>
+      </div>
+</div><br>
+<div class="row">
+      <div class="col-sm-3">
+        <input type="file" class="file btn btn-primary" id="upload-photo" >
+      </div> 
+</div>
+
+<br>
+
+<div class="row">
+    
+    <div class="col-sm-6">
+       <label for="price_prod" class="control-label">Prix du produit de référence</label>
+    </div>
+
+    <div class="col-sm-3">
+            <input  contenteditable="true" id="price_prod" value="{{price_prod}}">
+    </div>
+     
+</div>
+
+
+  
+
+      
+     
+    {{/if}}
+
+
+      
+
+
+
+
+
+
+     
+
+        
+
+        
+ </div>
+ {{/each}}
+</template>

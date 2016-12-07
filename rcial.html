@@ -1,0 +1,382 @@
+<template name="rcial">
+{{#if societe }}
+{{#each mydata_edit }}
+       <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h5 class="feature_sub">Gamme de produits et/ou services</h5>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+               
+       <div class="panel-group" id="accordion">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Principal gamme de produits & services 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+            
+               {{#each gamme}}
+                <div class="row">
+                           <div class="col-sm-4">
+                                 <input contenteditable="true"  id="nom_produit" value="{{nom_produit}}">
+                                
+                           </div>
+                    <div class="col-sm-4">
+                          <input  contenteditable="true" id="marque_produit" value="{{marque_produit}}">
+                          
+                    </div>
+                    <div class="col-sm-4">
+                          <input contenteditable="true" id="prix_produit" value="{{prix_produit}}">
+                             
+                    </div>
+                </div>
+              {{/each}}
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                          <input class="form-control"  id="nom_produit" placeholder="Nom du produit">
+                    </div>
+                    <div class="col-sm-4">
+                          <input  class="form-control" id="marque_produit" placeholder="Marque Commercial">  
+                    </div>
+                    <div class="col-sm-4">
+                          <input class="form-control" id="prix_produit" placeholder="Prix">    
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                       <label class="control-label">Photo du produit:</label>
+                    </div>
+                    <div class="col-sm-5">
+                          <input type="file" class="file" id="photo_produit" placeholder="Photo">
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+    
+
+       <button  type="button" id="ajout_produit" class="btn-success" aria-label="Left Align">
+                  Ajouter produit <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+   
+   
+     <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">            
+                    <h4 class="feature_sub">Principaux fournisseurs</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+ 
+       
+       <div class="panel-group" id="accordion2">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne2">
+                       Principaux fournisseurs de produits & services 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  {{#each fournisseur}}
+                <div class="row">
+                           <div class="col-sm-3">
+                                 <input contenteditable="true"  id="nom_fournisseur" 
+                                 value="{{nom_fournisseur}}">
+                                 
+                           </div>
+                    <div class="col-sm-3">
+                          <input  contenteditable="true" id="prct_achat_fournisseur" value="{{prct_achat_fournisseur}}">
+                         
+                    </div>
+                    <div class="col-sm-3">
+                          <input contenteditable="true" id="produit_fourni"  value="{{produit_fourni}}">
+                              
+                    </div>
+                </div>
+  {{/each}}
+                  
+                     <input class="form-control" id="nom_fournisseur" placeholder="Nom du fournisseur">
+                  
+              
+                  <div class="row">                 
+                    <div class="col-sm-6">
+                          <input class="form-control" id="prct_achat_fournisseur" placeholder="% des achats vers ce fournisseur par rapport au total">
+                    </div>
+                    <div class="col-sm-6">
+                          <input class="form-control" id="produit_fourni" placeholder="Produit fourni">
+                    </div>
+                  </div>
+                
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+      <button type="button" id="ajout_produit_fourni" class="btn-success" aria-label="Left Align">
+                  Insérer fournisseur<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+
+      
+
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    
+                    <h4 class="feature_sub">Principaux concurrents</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+     
+       <div class="panel-group" id="accordion2">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Information sur le concurrent
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                   {{#each concurrent}}
+                <div class="row">
+                           <div class="col-sm-4">
+                                 <input contenteditable="true"  id="nom_concurrent" value="{{nom_concurrent}}">
+                                 
+                           </div>
+                    <div class="col-sm-4">
+                          <input  contenteditable="true" id="marketshare_concurrent" value="{{marketshare_concurrent}}">
+                          
+                    </div>
+                    <div class="col-sm-4">
+                          <input contenteditable="true" id="produit_fourni_concurrent" value="{{produit_fourni_concurrent}}">
+                            
+                    </div>
+                </div>
+                {{/each}}
+                  
+                     <input class="form-control" id="nom_concurrent" placeholder="Nom du concurrent">
+                  <div class="row">                 
+                    <div class="col-sm-6">
+                          <input class="form-control" id="marketshare_concurrent" placeholder="Part de marché par rapport au concurrent">
+                    </div>
+                    <div class="col-sm-6">
+                          <input class="form-control" id="produit_fourni_concurrent" placeholder="Principal Produit fourni par ce concurrent">
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+    
+      <button type="button" id="ajout_produit_concurrent" class="btn btn-success" aria-label="Left Align">
+                  Insérer<span class="glyphicon glyphicon-plus" aria-hidden="true">
+                </span>
+      </button>
+      
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                   
+                    <h4 class="feature_sub">Principaux clients</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+       
+       <div class="panel-group" id="accordion">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                       Principaux clients
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  {{#each client}}
+                <div class="row">
+                           <div class="col-sm-6">
+                                 <input contenteditable="true"  id="nom_client" value="{{nom_client}}">
+                                
+                           </div>
+                    <div class="col-sm-6">
+                          <input  contenteditable="true" id="prct_vente_client"  value="{{prct_vente_client}}">
+                         
+                    </div>
+                    
+                </div>
+                {{/each}}
+
+               
+                  <div class="row">
+                    <div class="col-sm-4">
+                          <input class="form-control" id="nom_client" placeholder="Nom du client">
+                    </div>
+                     
+                    <div class="col-sm-8">
+                          <input class="form-control" id="prct_vente_client" placeholder="% des ventes vers ce client">
+                    </div>                         
+                  </div>
+                </div>
+              
+            </div>
+
+        </div>
+      </div>
+      
+      
+      
+      <div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                   
+                    <h4 class="feature_sub">Adresses de la société</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+      
+<div class="row">
+                    <div class="col-sm-4">
+                       <label for="lieu_exploitation">Lieu d'exploitation</label>
+                    </div>
+                    <div class="col-sm-5">
+                      <input contenteditable="true" id="lieu_exploitation" value="{{lieu_exploitation}}">
+                    </div>
+</div>
+<br>
+<div class="row">
+              <div class="col-sm-5">
+                       <label for="adresse_lieu_exploitation">Adresse du lieu d'exploitation:</label>
+              </div>
+              <div class="col-sm-4">
+                          <input contenteditable="true" id="adresse_lieu_exploitation" value="{{adresse_lieu_exploitation}}">
+              </div>
+</div>
+<br>
+
+<div class="row">
+                    <div class="col-sm-4">
+                            <label for="agence" >Nom d'agence:</label>
+                    </div>
+                    <div class="col-sm-5">
+                            <input contenteditable="true" id="agence" value="{{agence}}">
+                    </div>
+</div>
+<br>
+<div class="row">
+                    <div class="col-sm-4">
+                            <label for="agence" >Adresse de l'agence:</label>
+                    </div>
+                    <div class="col-sm-5">
+                          <input contenteditable="true" id="adresse_agence" value="{{adresse_agence}}">
+                    </div>
+                  
+</div>
+<br>
+
+<div class="row">
+                    <div class="col-sm-4">
+                            <label for="bureau" >Nom du Bureau:</label>
+                    </div>
+                    <div class="col-sm-5">
+                          <input contenteditable="true" id="bureau" value="{{bureau}}">
+                    </div>
+</div>
+<br>
+<div class="row">
+                     <div class="col-sm-4">
+                            <label for="adresse_bureau" >Adresse du Bureau:</label>
+                    </div>
+                    <div class="col-sm-5">
+                          <input contenteditable="true" id="adresse_bureau" value="{{adresse_bureau}}" >
+                    </div>
+                 
+</div>
+<br>
+       
+     
+<div class="row">
+                    <div class="col-sm-5">
+                      <label for=""></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input contenteditable="true" id="nom_resp_cial" value="{{nom_resp_cial}}">
+                   </div>
+ </div>
+<br>
+<div class="row">
+                   <div class="col-sm-5">
+                      <label for="phone_resp_cial">Téléphone du responsable</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input contenteditable="true" id="phone_resp_cial" value="{{phone_resp_cial}}">
+                   </div>
+ </div>
+ <br>
+ <div class="row">      
+                    <div class="col-sm-5">
+                      <label for="fonction_resp_cial">Fonction du responsable</label>
+                    </div>         
+                    <div class="col-sm-4">  
+                       <input contenteditable="true" id="fonction_resp_cial" value="{{fonction_resp_cial}}">
+                    </div>
+</div>
+<br>
+<div class="row">
+
+                    <div class="col-sm-5">
+                      <label for="email_resp_cial">Email du responsable</label>
+                    </div>
+                    <div class="col-sm-4"> 
+                        <input contenteditable="true" id="email_resp_cial" value="{{email_resp_cial}}">
+                   </div>
+
+  
+</div>
+<br>
+
+
+<div class="row">
+        <div class="col-sm-4">
+          <label for="lien_website" class="control-label">Lien Site Web:</label>
+        </div>
+        <div class="col-sm-5">
+            <input contenteditable="true" id="lien_website" value="{{lien_website}}">
+        </div>
+        
+</div>
+{{/each}}
+      
+{{/if}}      
+
+
+
+
+</template>

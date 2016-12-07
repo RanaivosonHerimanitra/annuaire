@@ -1,0 +1,29 @@
+<template name="rg">
+ <div class="form-group">
+           <div class="row">
+                 <div class="contact_full">
+                    <div class="col-md-6 left">
+                          <div class="left_contact">
+                            <form action="role">
+                                <div class="form-level">
+                                    <h4  id="Name" >{{Name}}</h4>
+                                    <span class="form-icon fa fa-user"></span>
+                                </div>
+                            </form>
+                          </div>
+        </div></div></div>
+
+       <div class="row">
+          <div class="col-md-2">
+            <input id="type_individu" type="checkbox"> S'enregistrer en tant qu'individu
+          </div>
+
+           <div class="col-md-2">
+            <input id="type_societe" type="checkbox">S'enregistrer en tant que Société
+          </div>
+      
+          
+      </div>
+        
+ </div>
+</template>

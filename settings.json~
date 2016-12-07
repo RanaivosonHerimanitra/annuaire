@@ -1,0 +1,14 @@
+{
+  "public": {
+        
+  },
+  "elasticsearchHost": "search-pro-mada-search-mmaqhkwxkwttph44tkqtuew5fi.us-west-2.es.amazonaws.com",
+ "env": {
+    "MONGO_URL": "mongodb://herimanitra:stat2016@candidate.45.mongolayer.com:10805,candidate.50.mongolayer.com:10503/annuaire?replicaSet=set-55f2d3e522ad29da0000055c",
+    "MONGO_OPLOG_URL":"mongodb://herimanitra:stat2016@candidate.45.mongolayer.com:10805,candidate.50.mongolayer.com:10503/local?authSource=annuaire",
+    "ROOT_URL": "http://ec2-52-88-192-28.us-west-2.compute.amazonaws.com"
+  }
+
+}
+
+

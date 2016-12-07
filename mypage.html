@@ -1,0 +1,434 @@
+<template name="mypage">
+{{#if currentUser }}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3" id="page-menu">
+            <!-- Left column -->
+            <a href="#" id="vos_annonce"><strong><i class="glyphicon glyphicon-globe"></i>Annonces
+            </strong></a>
+             <br><hr>
+            <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Votre compte</strong></a>
+           
+            
+
+            <hr>
+
+            <ul class="nav nav-stacked">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Settings 
+                    <i class="glyphicon glyphicon-chevron-down"></i></a>
+
+                    <ul class="nav nav-stacked collapse " id="userMenu">
+                        <li class="active"><a href="#"><i class="glyphicon glyphicon-user"></i>
+                            Changer mot de passe</a></li>
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2">Reporting
+                    <i class="glyphicon glyphicon-chevron-down"></i></a>
+
+                    <ul class="nav nav-stacked collapse" id="menu2">
+                        <li>
+                            <a href="#">
+                                <label class="control-label">Recherche Entreprise/Entrepreuneur par:
+                                </label>
+                                <select class="form-control">
+                                        <option value="0"></option>
+                                        <option value="1">Numéro de téléphone</option>
+                                         <option value="2">Adresse</option>
+                                        <option value="3">Types (PME,PMI,Grande entreprise)</option>
+                                </select>
+                           </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <label class="control-label">Secteur d'activité 
+                                </label>
+                                <select class="form-control">
+                                        <option></option>
+                                </select>
+                           </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <label class="control-label">Région
+                                </label>
+                                <select class="form-control">
+                                        <option value="1">Tous les régions</option>
+                                        <option value="2">Analamanga</option>
+                                        <option value="3">Anosy</option>
+                                        <option value="4">Diana</option>
+                                        <option value="5">Atsimo Atsinanana</option>
+                                        <option value="6">Aloatra Mangoro</option>
+                                        <option value="7">Vatovavy Fito vinany</option>
+                                        <option value="6">Androy</option>
+                                        <option value="7">Haute Matsiatra</option>
+                                        <option value="8">Boeny</option>
+                                        <option value="9">Atsimo Andrefana</option>
+                                        <option value="10">Vakinakaratra</option>
+                                        <option value="11">Bongolova</option>
+                                        <option value="12">Sava</option>
+                                        <option value="13">Amoron'i Mania</option>
+                                        <option value="14">Betsiboka</option>
+                                </select>
+                           </a>
+                        </li>
+
+
+
+                       <li>
+                            <a href="#">
+                                <label class="control-label">Type d'entreprises
+                                </label>
+                                <select class="form-control">
+                                        <option></option>
+                                </select>
+                           </a>
+                        </li>
+                        <li>
+                           <button type="button" class="btn btn-success">Rechercher <span class="glyphicon glyphicon-search">
+                           </span></button>
+                              
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header">
+                    <a href="#" data-toggle="collapse" data-target="#menu3">Réseaux sociaux<i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="nav nav-stacked collapse" id="menu3">
+                        <li><a href=""><i class="glyphicon glyphicon-circle"></i>Promouvoir mes produits 
+                        </a></li>   
+                    </ul>
+                </li>
+
+            </ul>
+
+            <hr>
+
+            <a href="#"><strong><i class="glyphicon glyphicon-link"></i> Vos données</strong></a>
+
+            <hr>
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-header"></li>
+                <li><a href="" id="ren_generaux"><i class="glyphicon glyphicon-list"></i>Généraux
+                </a></li>
+                <li><a href="" id="ren_ciaux"><i class="glyphicon glyphicon-briefcase"></i>Commerciaux
+                </a></li>
+                <li><a href="" id="ren_fin"><i class="glyphicon glyphicon-link"></i>Financiers</a></li>
+                <li><a href="" id="ren_rh"><i class="glyphicon glyphicon-list-alt"></i> Ressources Humaines
+                </a></li>
+                <li><a href="" id="ren_cv"><i class="glyphicon glyphicon-book"></i> C.V
+                </a></li>
+                <li><a href="" id="ren_projet"><i class="glyphicon glyphicon-star"></i> Projets
+                </a></li>
+            </ul>
+
+            <hr>
+           
+        </div>
+        <!-- /col-3 -->
+        <div class="col-sm-9">
+
+             {{#each mydata}}<!-- column 2 -->
+                    <ul class="list-inline pull-right">
+                        <li><a href="/"><i class="glyphicon glyphicon-home"></i>Accueil</a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i>Message<span class="count">{{count_message}}</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">1. Is there a way..</a></li>
+                                <li><a href="#">2. Hello, admin. I would..</a></li>
+                                <li><a href="#"><strong>All messages</strong></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i>{{Name}}</a></li>
+                    </ul>
+                   
+                    <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Bonjour {{Name}}</strong></a>
+            {{/each}}
+            <hr>
+
+            <div class="row">
+                <!-- center left-->
+                <div class="col-md-8">
+                  {{#if default_page}}
+                    <div class="row">
+                        <input  class="panel-heading col-sm-7" id="my-annonce" placeholder="Votre annonce"/> 
+                        <div class="col-sm-4">
+                            <select class="form-control" id="type_annonce">
+                                <option value=""></option>
+                                <option value="Offre d'emploi">Offre d'emploi</option>
+                                <option value="Demande d'emploi">Demande d'emploi</option>
+                                <option value="Recherche fournisseur">Recherche fournisseur</option>
+                            </select>   
+                        </div>          
+                    </div>
+                  <div class="row">
+                     <button type="button" id="publish" class="btn btn-primary col-sm-5"> 
+                               <i class="glyphicon glyphicon-plus"></i> publier
+                     </button>
+                  </div>
+                  
+                 
+                    
+<hr>
+
+                   
+
+                    <!--<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Reports</h4></div>
+                        <div class="panel-body">
+
+                            <small>Success</small>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
+                                    <span class="sr-only">72% Complete</span>
+                                </div>
+                            </div>
+                            <small>Info</small>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <span class="sr-only">20% Complete</span>
+                                </div>
+                            </div>
+                            <small>Warning</small>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <span class="sr-only">60% Complete (warning)</span>
+                                </div>
+                            </div>
+                            <small>Danger</small>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>-->
+                    <!--/panels-->
+
+                   <!-- <hr>-->
+
+                   
+
+                   <!-- <hr>-->
+{{#each myannonce}}
+    <!--<div class="panel panel-default">-->
+         <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <i class="glyphicon glyphicon-envelope pull-right"></i>
+                                <h4>Annonce de {{NOM}}</h4>
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                            <form class="form form-vertical">
+                                
+                                <div class="control-group">
+                                    <p class="controls">{{corps_annonce}}</p>
+                                   
+                                </div>
+                            
+                                 <br><br>
+                                    <div class="controls">
+                                        <button type="button" class="btn btn-success">
+                                            <i class="glyphicon glyphicon-tag"></i>{{type_annonce}}
+                                        </button>
+                                        <button type="button" class="btn btn-primary postuler">
+                                            Postuler
+                                        </button>
+                                        <small>
+                                         <span class="badge badge-info">{{nb_postulant}} postulant</span>
+                                        </small>
+                                    </div>
+
+
+                               
+                            </form>
+                        </div>
+                        <!--/panel content-->
+            </div>
+
+           <!-- <div class="panel-heading">
+                            <h4>New Requests</h4>
+            </div>
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item active">Hosting virtual mailbox serv..</a>
+                                <a href="#" class="list-group-item">Dedicated server doesn't..</a>
+                                <a href="#" class="list-group-item">RHEL 6 install on new..</a>
+                            </div>
+                        </div>
+
+            -->
+<!--</div>-->
+{{/each}}
+{{/if}}
+{{#if myrenseignement }}
+ 
+<div class="panel">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li id="tab_gen" class="active"><a href="#rg" data-toggle="tab">Généraux</a></li>
+                            <li id="tab_cial"><a href="#rcial" data-toggle="tab">Commerciaux</a></li>
+                            <li id="tab_rh"><a href="#rh" data-toggle="tab">Ressources Humaines</a></li>
+                            <li id="tab_fin"><a href="#rf" data-toggle="tab">Financiers</a></li>
+                            {{#if cv_clicked }}
+                            <li id="tab_cv"><a href="#cv" data-toggle="tab">Curriculum Vitae</a></li>
+                            {{/if}}
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active well" id="rg">
+                                <h4><i class="glyphicon glyphicon-user"></i></h4 > 
+                                 {{>rg}}
+                            </div>
+                                                           
+                            <div class="tab-pane well" id="rcial">
+                                <h4><i class="glyphicon glyphicon-user"></i></h4> 
+                                {{>rcial}}
+                            </div>
+                            <div class="tab-pane well" id="rh">
+                                <h4><i class="glyphicon glyphicon-user"></i></h4> 
+                                {{>rh}}
+                            </div>
+                            <div class="tab-pane well" id="rf">
+                                <h4><i class="glyphicon glyphicon-user"></i></h4> 
+                                {{>rf}}
+                            </div>
+                            {{#if cv_clicked }}
+                            <div class="tab-pane well" id="cv">
+                               {{>mycv}}                            
+                                  
+                            </div>
+                            {{/if}}
+                        </div>
+
+</div>
+
+{{/if }}
+
+                </div>
+                <!--/col-->
+
+               <!-- <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Notices</h4></div>
+                        <div class="panel-body">
+                            <div class="alert alert-info">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                This is a dismissable alert.. just sayin'.
+                            </div>
+                            <p>This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting point to create something more unique.</p>
+                            <p>Visit the Bootstrap Playground at <a href="http://bootply.com">Bootply</a> to tweak this layout or discover more useful code snippets.</p>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Visits</th>
+                                    <th>ROI</th>
+                                    <th>Source</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>45</td>
+                                    <td>2.45%</td>
+                                    <td>Direct</td>
+                                </tr>
+                                <tr>
+                                    <td>289</td>
+                                    <td>56.2%</td>
+                                    <td>Referral</td>
+                                </tr>
+                                <tr>
+                                    <td>98</td>
+                                    <td>25%</td>
+                                    <td>Type</td>
+                                </tr>
+                                <tr>
+                                    <td>..</td>
+                                    <td>..</td>
+                                    <td>..</td>
+                                </tr>
+                                <tr>
+                                    <td>..</td>
+                                    <td>..</td>
+                                    <td>..</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                  
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <h4>Engagement</h4></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-xs-4 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive"></div>
+                            <div class="col-xs-4 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive"></div>
+                            <div class="col-xs-4 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive"></div>
+                        </div>
+                    </div>
+                    
+
+                </div>-->
+                <!--/col-md-6-->
+
+            </div>
+            <!--/row-->
+
+            <!--<hr>
+
+            <a href="#"><strong><i class="glyphicon glyphicon-comment"></i> Discussions</strong></a>
+
+            <hr>-->
+
+            <!--<div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i> <small>(3 mins ago)</small> The 3rd page reports don't contain any links. Does anyone know why..</a></li>
+                        <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i> <small>(1 hour ago)</small> Hi all, I've just post a report that show the relationship betwe..</a></li>
+                        <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-heart"></i> <small>(2 hrs ago)</small> Paul. That document you posted yesterday doesn't seem to contain the over..</a></li>
+                        <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-heart-empty"></i> <small>(4 hrs ago)</small> The map service on c243 is down today. I will be fixing the..</a></li>
+                        <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-heart"></i> <small>(yesterday)</small> I posted a new document that shows how to install the services layer..</a></li>
+                        <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i> <small>(yesterday)</small> ..</a></li>
+                    </ul>
+                </div>
+            </div>-->
+        </div>
+        <!--/col-span-9-->
+    </div>
+</div>
+<!-- /Main -->
+
+<!--<footer class="text-center">This Bootstrap 3 dashboard layout is compliments of <a href="http://www.bootply.com/85850"><strong>Bootply.com</strong></a></footer>-->
+
+<!--<div class="modal" id="addWidgetModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Add Widget</h4>
+            </div>
+            <div class="modal-body">
+                <p>Add a widget stuff here..</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+                <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+        </div>
+       
+    </div>
+   
+</div>-->
+<!-- /.modal -->
+{{/if}}	
+</template>

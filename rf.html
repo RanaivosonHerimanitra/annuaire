@@ -1,0 +1,70 @@
+<template name="rf">
+{{#if societe }}
+{{#each mydata_edit}}
+	<div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Renseignements financiers</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+       <h4>Renseignements Financiers:</h4>
+       <!-- Asiana  début exercice -->
+
+<div class="row">
+        <div class="col-sm-4">
+          <label for="annee" class="control-label">Choisir une année financière</label>
+        </div>
+        <div class="col-sm-5">
+          <select class="form-control" id="annee">
+             <option value="2013">2013</option>
+             <option value="2014">2014</option>
+             <option value="2015">2015</option>
+          </select>
+          <!--<h4 contenteditable="true" id="annee">{{annee}}</h4>-->
+        </div>   
+</div>
+<br>
+
+<div class="row">
+       <div class="col-sm-4">
+          <label for="CA" class="control-label">Chiffre d'affaires:</label>
+       </div>
+       <div class="col-sm-5">
+          <h4 contenteditable="true" id="CA">{{CA}}</h4>
+       </div>   
+</div>
+<br>
+      
+      <div class="row">
+          <div class="col-sm-4">
+            <label for="profit" class="control-label">Profit brut:</label>
+          </div>
+        <div class="col-sm-5">
+          <h4 contenteditable="true" id="profit">{{profit}}</h4>
+        </div>   
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="benefice" class="control-label">Bénéfice d'exploitation:</label>
+        </div>
+        <div class="col-sm-5">
+          <h4 contenteditable="true" id="benefice">{{benefice}}</h4>
+        </div>   
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-4">
+           <label for="revenu_net" class="control-label">Revenu net:</label>
+        </div>
+        <div class="col-sm-5">
+          <h4 contenteditable="true" id="revenu_net">{{revenu_net}}</h4>
+        </div>   
+      </div>
+      
+  {{/each}}
+  {{/if}}    
+</template>

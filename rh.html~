@@ -1,0 +1,48 @@
+<template name="rh">
+<div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title"><b>Inscrivez-vous</b></h3>
+                    <h4 class="feature_sub">Dirigeants et Responsables de la société</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+    <div class="form-group">
+        <label for="nom_resp" class="col-sm-4 control-label">Nom du 1er responsable de la société:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="nom_resp">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone_resp" class="col-sm-4 control-label">Numéro du responsable:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="phone_resp">
+        </div>
+      </div>
+       
+       <div class="form-group">
+        <label for="fonction_resp" class="col-sm-4 control-label">Fonction du responsable:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="fonction_resp">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email_resp" class="col-sm-4 control-label">Email du responsable:</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="email_resp">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="capital_social" class="col-sm-4 control-label">Capital social</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="capital_social">
+        </div>
+      </div>
+     
+      <button type="button" id="next4" class="btn btn-success" aria-label="Left Align">Suivant
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+      </button>
+</template>

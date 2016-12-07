@@ -1,0 +1,25 @@
+<template name="minimenu">
+	<header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
+        <div class="container">
+               
+                     <div class="navbar-header ">
+                            <!-- Logo an'i pro mada-->
+                            <a class="navbar-brand" href="#">
+                                    <img src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/logopromada.png" alt="" class="img-responsive"> 
+                                    
+                            </a>
+                     </div>
+                        <nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+                            <ul class="nav navbar-nav navbar-right ">
+                                <li > <a  id="home-button">Home </a></li>  
+                                {{#if currentUser }} {{#if hasName}}
+                                <li > <a  href="{{pathFor route='mypage'}}">Ma page</a></li>       
+                                {{/if}} {{/if}}
+                                <li> <a href="{{pathFor route='login'}}">{{#if currentUser }} {{usermail}} {{else}}Connexion{{/if}}</a> 
+                                </li>
+                              <!--  <li><a id="my-inscription">Inscription</a> </li>  -->
+                            </ul>
+                         </nav>
+        </div>
+        </header>
+</template>

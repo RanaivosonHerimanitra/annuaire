@@ -1,0 +1,187 @@
+<template name="mysearch">
+	{{>minimenu}}
+	
+    <br> <br>
+        <div class="container">
+                <div class="hero-content text-center">
+                    <div class="hero-text" >
+                        <p class="hero-buttons"> 
+                            
+                            <input id="myquery1" class="btn btn-dark"  placeholder="Société ou Entrepreuneur" >
+                            
+                             <a href="{{pathFor route='mysearch'}}" id="launch_search1"   class="btn btn-main featured">
+                                {{#if change_language}}
+                                <strong>Rechercher <span class="glyphicon glyphicon-search" aria-hidden="true"></span></strong> 
+                                {{else}}
+                                 <strong>Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></strong>
+                                {{/if}}
+                            </a> 
+                        </p>
+                    </div>
+                </div>
+        </div>
+
+ 
+    
+    <div class="container">
+             <hgroup class="mb20">
+                   {{#if change_language}}
+                   <h1>Résultats de la recherche:</h1>
+                   {{else}}
+                    <h1>Search Results:</h1>
+                   {{/if}}
+                   <h2 class="lead"><strong class="text-danger">{{num_res}} </strong> 
+                     {{#if change_language}} résultat(s) trouvé(s) pour {{else}} results found for {{/if}}<strong class="text-danger">{{myquery}}</strong></h2>                             
+            </hgroup>
+    
+{{#each myresult }}
+ 
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+			<div class="col-xs-12 col-sm-12 col-md-3">
+				<a href="#" title="Lorem ipsum" class="thumbnail"><img src="/images/testimonial2.png" alt="" />
+				</a>
+                <svg width="250" height="250"></svg>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-2">
+				<ul class="meta-search">
+					<li><i class="glyphicon glyphicon-home"></i> <span>Contact: {{nom_resp}}
+					</span></li>
+					<li><i class="glyphicon glyphicon-folder-open"></i> <span>
+                        {{#if change_language}}Statut juridique:{{else}} Status:{{/if}} {{FJ}}
+					</span></li>
+					<li><i class="glyphicon glyphicon-tags"></i> <span>
+                        {{#if change_language}}Adresse siège:{{else}}Adress Headquarter: {{/if}} {{adresse_siege}}
+					</span></li>
+                    
+                    <li><i class="glyphicon glyphicon-eye-close"></i> <span>
+                        {{#if change_language}}Profil Non vérifié{{else}} Non verified profile {{/if}}
+                    </span></li>
+
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="#" id="displayed_name">{{Name}}</a></h3>
+				<p>{{MainActivity}}</p>						
+                <span class="plus">
+                     
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"> {{#if change_language}}Voir plus {{else}} View more {{/if}}
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                </span>
+			</div>
+			<span class="clearfix border"></span>
+		</article>
+	</section>
+     
+	{{/each}}
+     <!--{{/esEach}}-->
+</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <!-- modal-content -->
+    <div class="col-md-12">
+        <!-- id="pricing_table" class="pricing_overlay" -->
+      <section >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="feature_header text-center">
+                    <h3 class="feature_title">Nos <b>tarifs</b></h3>
+                    <h4 class="feature_sub"></h4>
+                    <div class="divider"></div>
+                </div>
+            </div>  <!-- Col-md-12 End -->
+
+            <div class="text-center pricing">
+                <div class="col-sm-4">
+                    <div class="single_table">
+                    <div class="plan_wraper"></div>
+                        <ul>
+                             {{#if change_language}}
+                             <li class="plan">Plan<br><span>standard</span></li>
+                            <!-- class="price" -->
+                            <li > 20 000 <span>Ar</span>: Chiffre d'affaire</li>
+                            <li > 30 000 <span>Ar</span>: Part de marché</li>
+                            <li > 100 000 <span>Ar</span>: Les 02 + principaux concurrents</li>         
+                            <li class="price_button"> 
+                                <button class="btn btn-main">Souscrire
+                                </button>
+                            </li>
+                            {{else}}
+                              <li class="plan">Standard<br><span>plan</span></li>
+                            <!-- class="price" -->
+                            <li > 20 000 <span>Ar</span>: Turnover</li>
+                            <li > 30 000 <span>Ar</span>: Market share</li>
+                            <li > 100 000 <span>Ar</span>: 02 + main competitors</li>         
+                            <li class="price_button"> 
+                                <button class="btn btn-main">Sign up
+                                </button>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div> <!-- Single col-md-4 End -->
+                <div class="col-sm-4">
+                    <div class="single_table grey_bg  ">
+                        <div class="plan_wraper"></div>
+                        <ul>
+                             {{#if change_language}} 
+                            <li class="plan">Abonnement<br><span> mensuel</span></li>
+                            <li >à partir de 200 000 <span>Ar</span></li>
+                            <li>Chiffre d'affaire + Part de marché + principaux concurrents
+                             + consultation d'entreprises illimitée par jour + contacts
+                            </li>
+                            <li class="price_button"> 
+                                <button class="btn btn-main featured">
+                                Souscrire
+                                </button>
+                            </li>
+                            {{else}}
+                             <li class="plan">Monthly<br><span> plan</span></li>
+                            <li >starting from 200 000 <span>Ar</span></li>
+                            <li>Turnover + Market share + main competitors
+                             + unlimited company's search + contacts
+                            </li>
+                            <li class="price_button"> 
+                                <button class="btn btn-main featured">
+                                Sign up
+                                </button>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div> <!-- Single col-md-4 End -->
+                <div class="col-sm-4">
+                    <div class="single_table dark_bg">
+                        <div class="plan_wraper"></div>
+                        <ul>
+                            {{#if change_language}} 
+                            <li class="plan">Plan<br><span>affaires</span></li>
+                            <li class="price_button"> 
+                                <button class="btn btn-main">Nous contactez
+                                </button>
+                            </li>
+                            {{else}}
+                            <li class="plan">Business<br><span> plan</span></li>
+                            <li class="price_button"> 
+                                <button class="btn btn-main">Contact us
+                                </button>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div> <!-- Single col-md-4 End -->
+            </div>
+        </div>
+    </div>
+</section> 
+    </div>
+  </div>
+</div>
+
+
+
+</template>

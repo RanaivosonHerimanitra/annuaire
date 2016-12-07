@@ -1,0 +1,61 @@
+<template name="rh">
+{{#if societe }}
+{{#each mydata_edit}}
+<div class="row">
+        <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h4 class="feature_sub">Dirigeants et Responsables de la société</h4>
+                    <div class="divider"></div>
+                </div>
+      </div></div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="nom_resp" class="control-label">Nom du 1er responsable:</label>
+      </div>
+        <div class="col-sm-3">
+          <input contenteditable="true" id="nom_resp" value="{{nom_resp}}">
+        </div>
+    </div>
+    <br>
+      <div class="row">
+         <div class="col-sm-6">
+             <label for="phone_resp" class="control-label">Numéro du responsable:</label>
+         </div>
+        <div class="col-sm-3">
+          <input contenteditable="true" id="phone_resp" value="{{phone_resp}}">
+        </div>
+      </div>
+      <br>
+       
+       <div class="row">
+        <div class="col-sm-6">
+          <label for="fonction_resp" class="control-label">Fonction du responsable:</label>
+        </div>
+        <div class="col-sm-3">
+          <input contenteditable="true"  id="fonction_resp" value="{{fonction_resp}}">
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="email_resp" class="control-label">Email du responsable:</label>
+        </div>
+        <div class="col-sm-3">
+          <input contenteditable="true"  id="email_resp" value="{{email_resp}}">
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="capital_social" class="control-label">Capital social</label>
+        </div>
+        <div class="col-sm-3">
+          <input contenteditable="true"  id="capital_social" value="{{capital_social}}">
+        </div>
+      </div>
+   {{/each}}  
+{{/if}}      
+</template>

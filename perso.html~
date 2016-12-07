@@ -1,0 +1,9 @@
+
+
+<body ng-app="annuaire_v2">
+
+  <div ng-include="'index.ng.html'"></div>
+
+</body>
+
+

@@ -1,0 +1,18 @@
+if (Meteor.isClient) {
+    angular.module('moduleGamme',['angular-meteor']);
+    angular.module('moduleGamme').controller('GammeController',['$scope','$meteor',
+      function($scope,$meteor) {
+        $scope.corporation=$meteor.collection(Corporation);
+            
+      }]);
+ }
+
+ if (Meteor.isServer) {
+
+Meteor.startup ( function () {
+  var corporation = [{ nom_gamme:"Nom de la gamme",marque_ref_gamme:"Marque commerciale du produit",
+                      prix_gamme:"Prix du produit"   }]
+})
+  
+
+}

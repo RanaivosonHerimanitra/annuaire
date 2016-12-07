@@ -1,0 +1,405 @@
+    <template name="menu">
+        <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
+        <div class="container">
+               
+                     <div class="navbar-header ">
+                            <!-- Logo an'i pro mada-->
+                            <a class="navbar-brand" href="#">
+                             <img src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/logopromada.png" alt="" class="img-responsive">       
+                            </a>
+                     </div>
+                        <nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">                    
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a>{{>loginButtons}}</a></li> <!-- temporaire -->
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                {{#if currentUser}}
+                                     {{#if inscription_finished}}
+                                         <li><a href="{{pathFor route='mypage'}}">Ma page
+                                        </a> </li>
+                                      {{else}}
+                                       <li><a href="{{pathFor route='completeProfile'}}" id="my-inscription">Inscription
+                                       </a> </li>
+                                       {{/if}}
+                               {{/if}}
+                                 <li><a href="#service">Services</a> </li>
+                                 <li><a href="#about" >{{#if change_language }} Qui Sommes Nous  {{else}} who are we  {{/if}}</a> </li>
+                                <li><a href="#contact">{{#if change_language }} Nous joindre
+                                    {{else}} Join us {{/if}}</a> </li>
+                                 <li><a href="#" type="button" id="mylanguage">Francais </a> </li> 
+                            </ul>
+                         </nav>
+        </div>
+        </header>
+       
+        <section id="home" class="hero landing hero-section">
+            <div class="video-background-container">
+                <video preload="auto" autoplay loop muted class="video-background">
+                    <source type="video/mp4" src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/gdrive.mp4" />
+                    <source type="video/ogg" src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/gdrive.ogg" />
+                    <source type="video/webm" src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/gdrive.webm" />
+                </video>
+            </div> 
+
+            <div class="parallax-overlay"></div>
+
+            <div class="container">
+                <div class="hero-content text-center">
+                    <div class="hero-text wow fadeIn" data-wow-delay=".8s">
+                        {{#if change_language }}
+                        <h3 class="hero-title"> 
+                            <span> Bienvenue dans l'Annuaire des Professionnels</span>
+                        </h3>
+                        <h4 class="hero-description">
+                            Découvrez plus de 100 000 entreprises et organismes sociaux. Nous opérons à Madagascar et nous vous mettons en relation avec le monde des affaires et de l'entrepreuneuriat social via notre plate-forme
+                        </h4>
+                        {{else}} 
+                        <h3 class="hero-title"> 
+                            <span>Welcome to the professional yearbook</span> 
+                             <h4 class="hero-description">
+                                Explore more than 100,000 companies and social organizations. 
+                               We operate in Madagascar and can connect you with the business world and entrepreuneurship via our platform.
+                            </h4>
+                        </h3>
+                        {{/if}}
+                         
+                         
+                        <p class="hero-buttons"> 
+                            
+                            
+                             <a href="{{pathFor route='mysearch'}}" id="launch_search" class="btn btn-main featured">
+                                <strong> {{#if change_language }} Explorer {{else}} Explore {{/if}}<span class="glyphicon glyphicon-search" aria-hidden="true"></span></strong> 
+                            </a> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <section id="service">
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="feature_header text-center">
+                                <h3 class="feature_title">{{#if change_language }}Nos <b>Services</b>
+                                    {{else}} Our <b>services</b> {{/if}}
+                                </h3>
+                            {{#if change_language }}
+                                <h4 class="feature_sub">Nous facilitons votre prospection et analyse de marché <!--dans tous les secteurs d'activités--><br>
+                                    Nous facilitons l'échange entre entreprises à la recherche de nouvelles opportunités <br>(fournisseurs, clients, marchés
+                                    potentiels,marchés cibles,etc.)<br>
+                                    Nous mettons en relation les demandeurs d'emploi avec les employeurs<br>
+                                    Nous mettons en relation des porteurs de projets avec des contacts  potentiels ( investisseurs, business angels, bailleurs, …) <br>
+                                    Nous améliorons la visibilité de vos produits et services sur les réseaux sociaux (facebook, twitter,linkedin,etc.) et autres<br>
+                                    Confiez nous vos données, vous serez visibles par des acteurs potentiels (clients, fournisseurs, partenaires, etc.)
+                                </h4>
+                            {{ else }}
+                                <h4 class="feature_sub">We facilitate your market prospection and
+                                    analysis<br>
+                                    We facilitate exchange among companies which are looking for new opportunities<br>
+                                    We provide networking between peoplesearching for a job and potential employers, companies.<br>
+                                    We provide networking between people who have promissing projects and potential investors, business angels,etc.<br>
+                                    We can improve your visibility on social networks such as facebook, Linkedin, twitter,etc.<br>
+                                    Trust us, we will take care of your data and you will be visible by potential investors and partners. 
+                                </h4>
+                            {{/if }}
+                                <div class="divider"></div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+        </section>
+
+    <!-- About us start -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="feature_header text-center">
+                        <h3 class="feature_title">
+                            {{#if change_language }}
+                            Qui<b> sommes-nous</b>
+                            {{else}}
+                             Who<b> are we</b>
+                            {{/if}}
+                        </h3>
+                        <h4 class="feature_sub">Experts</h4>
+                        <div class="divider"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="feature-tab">
+                <div class="col-md-6">
+                    <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane active" id="experts">
+                                <img src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/experts.jpg" alt="" class="img-responsive">
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="networking">
+                                <img src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/networking.jpg" alt="" class="img-responsive">
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="analytics">
+                                <img src="https://s3-us-west-2.amazonaws.com/pro-annuaire-storage/analytics.jpg" alt="" class="img-responsive">
+                          </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs" role="tablist">
+                          <li role="presentation" class="active">
+                            <a href="#experts" role="tab" data-toggle="tab" >
+                                <div class="col-sm-12 single-feature">
+                                    <div class="col-sm-2 feature-icon">
+                                        <i class="fa fa-laptop"></i>
+                                    </div>
+                                    <div class="col-sm-10 feature-content">
+                                         {{#if change_language }}
+                                           <h4>Création d'entreprises</h4>
+                                         {{else}}
+                                            <h4>Company's creation</h4>
+                                         {{/if}}
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </a>
+                            </li>
+                          <li role="presentation">
+                            <a href="#networking" role="tab" data-toggle="tab">
+                                <div class="col-sm-12 single-feature">
+                                    <div class="col-sm-2 feature-icon">
+                                        <i class="fa fa-send"></i>
+                                    </div>
+                                    <div class="col-sm-10 feature-content">
+                                        {{#if change_language }}
+                                        <h4>Réseautage et Prospection de marchés</h4>
+                                        <p></p>
+                                        {{else}}
+                                         <h4>Networking and market prospection</h4>
+                                        <p></p>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </a>
+                          </li>
+                          <li role="presentation">
+                            <a href="#analytics" role="tab" data-toggle="tab">
+                                <div class="col-sm-12 single-feature">
+                                    <div class="col-sm-2 feature-icon">
+                                        <i class="fa fa-send"></i>
+                                    </div>
+                                    <div class="col-sm-10 feature-content">
+                                         {{#if change_language }}
+                                          <h4>Marketing et Analyse de données</h4>
+                                          <p></p>
+                                          {{else}}
+                                          <h4>Marketing and data analysis</h4>
+                                          <p></p>
+                                          {{/if}}
+                                    </div>
+                                </div>
+                            </a>
+                          </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        </div>
+    </section>
+    <!-- About us End -->
+
+    <!-- Contact-->
+    <section id="contact"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="feature_header text-center">
+                        <h3 class="feature_title"><b>Questions?</b></h3>
+                        <h4 class="feature_sub">
+                            {{#if change_language }}
+                              Ecrivez-nous
+                            {{else}}
+                              Drop us a message
+                            {{/if}}
+                        </h4>
+                        <div class="divider"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="contact_full">
+                    <div class="col-md-6 left">
+                        <div class="left_contact">
+                            <form action="role">
+                                <div class="form-level">
+                                    <input  placeholder="Sujet" id="Sujet"  value="" type="text" class="input-block">
+                                    <span class="form-icon fa fa-user"></span>
+                                </div>
+                                <div class="form-level">
+                                    <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
+                                    <span class="form-icon fa fa-envelope-o"></span>
+                                </div>
+                                <div class="form-level">
+                                    <input name="name" placeholder="Phone" id="phone" class="input-block" value="" type="text">
+                                    <span class="form-icon fa fa-phone"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 right">
+                        <div class="form-level">
+                            <textarea name="" id="message"  rows="5" class="textarea-block" placeholder="message"></textarea>
+                            <span class="form-icon fa fa-pencil"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button id="send-email" class="btn btn-main featured">
+                             {{#if change_language }}
+                               Soumettre
+                             {{else}}
+                               Submit
+                             {{/if}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Area Start -->
+{{#if change_language }}
+    <section id="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h3 class="menu_head">Menu principal</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#service">Services</a></li>
+                                <li><a href="#about">Qui sommes-nous</a></li>
+                                <li><a href="#inscription">Se connecter</a></li>
+                                <li><a href="#contact">Ecrivez-nous</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h3 class="menu_head">Liens utiles</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="#">Conditions d'utilisation</a></li>
+                                <li><a href="#">Protection de la vie privée</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h3 class="menu_head">Nous joindre</h3>
+                        <div class="footer_menu_contact">
+                            <ul>
+                                <a href="http://pro-mada.com" class="lien_principal"><i class="fa fa-map-marker"></i>
+                                <span>www.pro-mada.com</span></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_b">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer_mid pull-right">
+                            <ul class="social-contact list-inline">
+                                <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-google-plus"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Area End -->
+{{else}}
+<section id="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="menu_head">Main Menu</h3>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#service">Service</a></li>
+                            <li><a href="#about">Who are we</a></li>
+                            <li><a href="#inscription">Connection</a></li>
+                            <li><a href="#contact">Drop us a message</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="menu_head">Useful Links</h3>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="menu_head">Contact us</h3>
+                    <div class="footer_menu_contact">
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i>
+                            <span> www.pro-mada.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+               
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_b">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--<div class="footer_bottom">
+                        <p class="text-block"> &copy; Copyright reserved to <span>Cyprass </span></p>
+                    </div>-->
+                </div>
+                <div class="col-md-6">
+                    <div class="footer_mid pull-right">
+                        <ul class="social-contact list-inline">
+                            <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>             
+                            <li> <a href="#"><i class="fa fa-google-plus"></i> </a></li>
+                            <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/if}}
+
+
+</template>
