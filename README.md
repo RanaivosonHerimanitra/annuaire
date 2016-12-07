@@ -30,4 +30,8 @@
 
 `db.corporation.update ({ FJ:1 },{$set:{FJ:"SA"}},{multi:true}  )`
 
-Here, I change all obs. that have `FJ=1 to FJ=SA`
+Here, I change all obs. in collection called `corporation` that have `FJ=1 to FJ=SA`
+
+### Upload data into `elasticsearch` on AWS
+
+`curl -XPOST 'url' --data-binary @filename.json`
