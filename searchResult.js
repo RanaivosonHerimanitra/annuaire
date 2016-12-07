@@ -15,13 +15,6 @@ Router.configure({
 });
 
 if (Meteor.isClient) {
-  
-  // function getSearchResult(query) {
-  //      var re = new RegExp("^" + query, "i");
-  //       return Corporation.find( { Name:  re  } );
-  //       //Corporation.find( { Name: {$regex: re } } );
-  // }
-   
  Session.set('searchQuery', null)
   Template.mysearch.onCreated(function () {
      var self = this;
@@ -29,9 +22,9 @@ if (Meteor.isClient) {
          self.subscribe("search-corporation", Session.get("searchQuery"));
      });
   });
-   
+
      Template.mysearch.events ({
-         'click #displayed_name': function (event,t) 
+         'click #displayed_name': function (event,t)
          {
           var xscale = d3.scale.linear().range([0,250])
           var yscale = d3.scale.linear().range([0,250])
@@ -42,7 +35,7 @@ if (Meteor.isClient) {
           var max = d3.max(mydata, function(d) { return d.annee })
           console.log('le max est:',max)
           console.log('le min est:',min)
-         
+
          },
          'click #home-button': function  (e,t) {
            Router.go('/');
@@ -51,28 +44,27 @@ if (Meteor.isClient) {
            Router.go('/completeProfile');
 
          },
-       
+
         'click #launch_search1'  : function (e,t)
           {
-           // e.getPreventDefault();
             if ( Historicalsearch.find().count() >0 )
             {
               Meteor.call('remove_search_history')
-            } 
+            }
             Session.set('searchQuery', $('#myquery1').val() )
             Router.go('/mysearch')
-            
 
-            Meteor.call('search_from_esaws', $('#myquery1').val(), function(err,res){ 
+
+            Meteor.call('search_from_esaws', $('#myquery1').val(), function(err,res){
                 if (!err) {
                   console.log(res["count"].count)
                       Session.set('search_from_esaws_result', res["count"].count);
-                       
-                      if ( res["count"].count>10 ) 
+
+                      if ( res["count"].count>10 )
                       {
-                      for (j=0;j<10;j++) 
+                      for (j=0;j<10;j++)
                       {
-                       
+
                         Historicalsearch.insert ({
                                 repondant:Meteor.userId(),
                                 ACTPR:res["response"].hits.hits[j]['_source'].ACTPR,
@@ -85,7 +77,7 @@ if (Meteor.isClient) {
                         })
                       }
                       } else {
-                      for (j=0;j<res["count"].count;j++) 
+                      for (j=0;j<res["count"].count;j++)
                         {
                         Historicalsearch.insert ({
                                 repondant:Meteor.userId(),
@@ -99,13 +91,13 @@ if (Meteor.isClient) {
                         })
                       }
 
-                      } 
-                        
-                } else 
+                      }
+
+                } else
                 {
                  Session.set('search_from_esaws_result', {error: err})
                 }
-                   
+
             });
           }
   });
@@ -114,8 +106,6 @@ if (Meteor.isClient) {
            return Session.get('which_language')=='English';
         },
         myresult: function () {
-          //return Corporation.find({repondant:{$ne:Meteor.userId()}},{limit:5})
-         
                return Historicalsearch.find({repondant:Meteor.userId()})
         },
         myquery: function () {
@@ -131,26 +121,13 @@ if (Meteor.isClient) {
 
 //
 Router.route('/mysearch', {
-  //  waitOn: function() {
-
-  //      return  Meteor.subscribe("search-corporation", Session.get("searchQuery"));
-  //  },
-  //  action: function() {
-  //   if ( this.ready() ) {
-  //       this.render();
-  //   } 
-  // }
+  
 });
 
 } //end of isClient
 
 if (Meteor.isServer) {
-
- 
-  
-  //Meteor.publish("search-corporation", getSearchResult);
- Meteor.startup(function () {  
-  //Corporation._ensureIndex({_id:1,Name: "text",repondant:1});
+ Meteor.startup(function () {
 });
-  
+
 }
